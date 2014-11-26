@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<channel>
+  <album>
+    <Template>Temp1</Template>
+    <albumTitle>albOne</albumTitle>
+    <albumText>textAlb</albumText>
+    <foto>
+      <fotoTitleTag>fotoOne</fotoTitleTag>
+      <fotoTextTag>textFoto</fotoTextTag>
+    </foto>
+  </album>
+</channel>

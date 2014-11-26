@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<channel>
+  <album title="erstes Album">
+    <albumText>Suuuuuper spannender Text fuer das Album!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</albumText>
+    <foto>
+      <fotoTitle>albOneFotoOne</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albOneFotoTwo</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albOneFotoThree</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albTwoFotoOne</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albTwoFotoTwo</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albTwoFotoThree</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albThreeFotoOne</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albThreeFotoTwo</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albThreeFotoThree</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albFourFotoOne</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albFourFotoTwo</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albFourFotoThree</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albFiveFotoOne</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albFiveFotoTwo</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albFiveFotoThree</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+  </album>
+  <album title="zweites Album">
+    <albumText>Suuuuuper spannender Text fuer das Album!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</albumText>
+    <foto>
+      <fotoTitle>albOneFotoOne</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albOneFotoTwo</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albOneFotoThree</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albTwoFotoOne</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albTwoFotoTwo</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albTwoFotoThree</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albThreeFotoOne</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albThreeFotoTwo</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albThreeFotoThree</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albFourFotoOne</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albFourFotoTwo</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albFourFotoThree</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albFiveFotoOne</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albFiveFotoTwo</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albFiveFotoThree</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+  </album>
+  <album title="drittes Album">
+    <albumText>Suuuuuper spannender Text fuer das Album!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</albumText>
+    <foto>
+      <fotoTitle>albOneFotoOne</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albOneFotoTwo</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albOneFotoThree</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albTwoFotoOne</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albTwoFotoTwo</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albTwoFotoThree</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albThreeFotoOne</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albThreeFotoTwo</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albThreeFotoThree</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albFourFotoOne</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albFourFotoTwo</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albFourFotoThree</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albFiveFotoOne</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albFiveFotoTwo</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albFiveFotoThree</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+  </album>
+  <album title="viertes Album">
+    <albumText>Suuuuuper spannender Text fuer das Album!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</albumText>
+    <foto>
+      <fotoTitle>albOneFotoOne</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albOneFotoTwo</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albOneFotoThree</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albTwoFotoOne</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albTwoFotoTwo</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albTwoFotoThree</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albThreeFotoOne</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albThreeFotoTwo</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albThreeFotoThree</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albFourFotoOne</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albFourFotoTwo</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albFourFotoThree</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albFiveFotoOne</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albFiveFotoTwo</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albFiveFotoThree</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+  </album>
+  <album title="fuenftes Album">
+    <albumText>Suuuuuper spannender Text fuer das Album!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</albumText>
+    <foto>
+      <fotoTitle>albOneFotoOne</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albOneFotoTwo</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albOneFotoThree</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albTwoFotoOne</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albTwoFotoTwo</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albTwoFotoThree</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albThreeFotoOne</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albThreeFotoTwo</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albThreeFotoThree</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albFourFotoOne</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albFourFotoTwo</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albFourFotoThree</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albFiveFotoOne</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albFiveFotoTwo</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+    <foto>
+      <fotoTitle>albFiveFotoThree</fotoTitle>
+      <fotoDescription>Suuuuuper spannender Text fuer das Foto!kndsgjkndlkgndflkgndfklgndlkfgdkllfgdfgdgdgdgkldnglkdngldkngkldg</fotoDescription>
+    </foto>
+  </album>
+</channel>
