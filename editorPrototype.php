@@ -34,6 +34,10 @@ Theoretisch unbegrenzt viele Fotos und texte in einem Album
             Editor Prototype
         </title>
         <style>
+            body
+            {
+                background: #bbb;
+            }
             #wrapper
             {
                 width: 100%;
@@ -45,12 +49,34 @@ Theoretisch unbegrenzt viele Fotos und texte in einem Album
             p{
                 font-weight: bold;
             }
+            img{
+                border: 2px solid #bbb;
+            }
+            img:hover{
+                border: 2px solid crimson;
+                box-shadow: 0 0 25px crimson;
+            }
+            div{
+                float: left;
+            }
+            .clearFix
+            {
+                clear: both;
+            }
         </style>
     </head>
     <body>
         
         <div id="wrapper">
         
+            <?php
+                if(isset($_GET["template"])){
+                    $template = $_GET["template"];
+                    $anordnung = $_GET["anordnung"]; 
+                 
+                echo "Du hast folgende Anordnung gewaehlt: " . $anordnung. "dein Template ist:" . $template;
+                }
+            ?>
             <h1>Hier kannst du dir dein eigenes Album erstellen</h1>
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                 <p> Albumname: <input name="albumName" type="text" value=""></p>
@@ -62,8 +88,8 @@ Theoretisch unbegrenzt viele Fotos und texte in einem Album
                 
                 
                 
-                <p>Bitte w&auml;hle eins der folgenden Designs f&uuml;r dein Album aus:</p>
-               
+                
+                
                 <!-- hier später Divs oder  Bilder der Templates-->
                 <select name="template">
                     <option>

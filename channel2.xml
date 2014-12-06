@@ -2,11 +2,11 @@
 <channel>
   <album>
     <Template>Temp1</Template>
-    <albumTitle>albOne</albumTitle>
-    <albumText>textAlb</albumText>
+    <albumTitle></albumTitle>
+    <albumText></albumText>
     <foto>
-      <fotoTitleTag>fotoOne</fotoTitleTag>
-      <fotoTextTag>textFoto</fotoTextTag>
+      <fotoTitleTag></fotoTitleTag>
+      <fotoTextTag></fotoTextTag>
     </foto>
   </album>
 </channel>
