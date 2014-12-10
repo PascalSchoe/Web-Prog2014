@@ -12,6 +12,7 @@
     <head>
         <title>W&auml;hle deine Template</title>
         <link href='http://fonts.googleapis.com/css?family=Poiret+One|Indie+Flower|Playball|Audiowide' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" src="JS/hilfsFunktionen.js"></script>
         <script type="text/javascript" src="erzeugeTemplate.js"></script>
         <link  rel="stylesheet" type="text/css" href="CSS/main.css">
         </head>
@@ -68,7 +69,7 @@
                         blablablalblablablalb lablablalblablablalblablablalblablab lalblablablalblablabla  lblablablalblablablalblablablal
                         blablablalb lablablalblablabla lblablablalblablablalblablabl alblablablalblablablal blablablalblablablalblablablal
                     </p>
-                     <a onclick="starteEditor('template1')" class="button add">Ich will dieses Template</a>
+                     <a onclick="starteEditor('template1')" class="button bestaetigen">Ich will dieses Template</a>
                 </div>
 
                 <hr width="1" size="800" style="float: left">
@@ -89,7 +90,7 @@
                         blablablalblablablalb lablablalblablablalblablablalblablab lalblablablalblablabla  lblablablalblablablalblablablal
                         blablablalb lablablalblablabla lblablablalblablablalblablabl alblablablalblablablal blablablalblablablalblablablal
                     </p>
-                    <a onclick="starteEditor('template2')" class="button add">Ich will dieses Template</a>
+                    <a onclick="starteEditor('template2')" class="button bestaetigen">Ich will dieses Template</a>
                 </div>
 
                 <hr width="1" size="800" style="float: left">
@@ -109,7 +110,7 @@
                         blablablalblablablalb lablablalblablablalblablablalblablab lalblablablalblablabla  lblablablalblablablalblablablal
                         blablablalb lablablalblablabla lblablablalblablablalblablabl alblablablalblablablal blablablalblablablalblablablal
                     </p>
-                   <a onclick="starteEditor('template3')" class="button add">Ich will dieses Template</a>
+                   <a onclick="starteEditor('template3')" class="button bestaetigen">Ich will dieses Template</a>
                 </div>
 
                 <hr width="1" size="800" style="float: left">
@@ -131,7 +132,8 @@
                     
                     function starteEditor(template)
                     {
-                       window.location="editorPrototype.php?template=" + template + "&anordnung=" + sessionStorage.getItem("anordnung");
+                       sessionStorage.setItem("template", template);
+                       window.location="editor.html";
                     }
                  
                 </script>

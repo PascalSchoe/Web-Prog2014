@@ -101,12 +101,9 @@ function erzeugeTemp()
         function appendElements(imageIndex, textIndex)
         {
             //zu erst Container leeren
-            while(template1Content.hasChildNodes())
-            {
-                template1Content.removeChild(template1Content.firstChild);
-                template2Content.removeChild(template2Content.firstChild);
-                template3Content.removeChild(template3Content.firstChild);
-            }
+            elementLeeren(template1Content);
+            elementLeeren(template2Content);
+            elementLeeren(template3Content);
             
             for(i = 0; i < imageIndex; i++)
             {
@@ -125,16 +122,6 @@ function erzeugeTemp()
             template1Content.appendChild(clearFix.cloneNode(true));
             template2Content.appendChild(clearFix.cloneNode(true));
             template3Content.appendChild(clearFix.cloneNode(true));
-        }
-
-        function $(id)
-        {
-            return document.getElementById(id);
-        }
-
-        function createE(Element)
-        {
-            return document.createElement(Element);
         }
     }
 }
