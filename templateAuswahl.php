@@ -14,8 +14,11 @@
         <link href='http://fonts.googleapis.com/css?family=Poiret+One|Indie+Flower|Playball|Audiowide' rel='stylesheet' type='text/css'>
         <script type="text/javascript" src="JS/hilfsFunktionen.js"></script>
         <script type="text/javascript" src="erzeugeTemplate.js"></script>
+        
         <link  rel="stylesheet" type="text/css" href="CSS/main.css">
-        </head>
+        <link  rel="stylesheet" type="text/css" href="CSS/buttons.css">
+        
+    </head>
     <body >
         <div id="sticky" ><a href="#top">Nach oben!</a></div>
         <p style="width: 50%; margin-left: 20%;margin-top: 3%; font-style: oblique">

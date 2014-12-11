@@ -177,6 +177,7 @@ switch(anordnung)
         albumTextMaxBuchstaben[1] = 300;
         albumTextMaxBuchstaben[2] = 300;
         
+        vorschauContainer.appendChild(inputContainer);
         break;
         
     case "anordnung2":
@@ -292,7 +293,8 @@ function bildHinzufuegen(ursprung)
     fotoText.setAttribute("rows", "4");
     fotoText.setAttribute("cols", "50");
     
-    inputContainer.setAttribute("class", "sichtbar");
+    //inputContainer.setAttribute("class", "sichtbar");
+    wechselSichtbarkeit("inputContainer");
     input.setAttribute("type", "file");
     
     fieldset.appendChild(legend);
@@ -309,7 +311,7 @@ function bildHinzufuegen(ursprung)
     fieldset.appendChild(submit);
     fotoForm.appendChild(fieldset);
     inputContainer.appendChild(fotoForm);
-    vorschauContainer.appendChild(inputContainer);
+    
     
     
     fotoForm.addEventListener("submit", function(e){
@@ -351,6 +353,8 @@ function textHinzufuegen(ursprung, index)
     elementLeeren(p2Tag);
     elementLeeren(p3Tag);
     
+    wechselSichtbarkeit("inputContainer");
+    
     submit.innerHTML = "fertig";
     
     legend.innerHTML = "Mach bitte deine Eingabe:";
@@ -369,11 +373,7 @@ function textHinzufuegen(ursprung, index)
     fieldset.appendChild(submit);
     textForm.appendChild(fieldset);
     inputContainer.appendChild(textForm);
-    vorschauContainer.appendChild(inputContainer);
     
-    
-    
-    inputContainer.setAttribute("class", "sichtbar");
     
     //eventlistener
     textForm.addEventListener("submit", function(e){

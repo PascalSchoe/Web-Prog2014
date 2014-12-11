@@ -423,54 +423,8 @@ img{
 {
     display: none;
 }
-.templateButton
-{
-   background: blue;
-   border-left: 0.02vmax solid ;
-   border-top: 0.02vmax solid ;
 
-}
-.button
-{
-    background: #ccc;
-    //background-image: linear-gradient(top, #eee, #ccc);
-    //filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#eeeeee', EndColorStr='#cccccc');
-    display: inline-block;
-    border: 1px solid #555;
-    padding: 0 1.5em;
-    margin: 0.5em;
-    color: #333;
-    font: bold 1em helvetica;
-    font-style: italic;
-    white-space: nowrap;
-    border-radius: 0.2em;
-   // box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.3);
-   // text-shadow: 0 1px 0 rgba(255,255,255,.8);
-}
-.button:before
-{
-    background: rgba(0,0,0,.1);
-    text-align: center;
-    font-size: 1.5em;
-    margin: 0 1em 0 -1em;
-    box-shadow: 2px 0 0 rgba(0,0,0,.5), 3px 0 0 rgba(255,255,255,.5);
-    
 
-}
-.button:hover 
-{
-    background: #ddd;
-    //background-image: linear-gradient(top, #fafafa, #ddd);
-    //filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa', EndColorStr='#dddddd');
-}
-.bestaetigen:before{
-    content: "\2714";
-    padding-right: 0.25em;
-}
-.hinzufuegen:before {
-    content: "\271A";
-    padding-right: 0.25em;
-}
 //links  color/ boxshadow red
 #vorschau
 {

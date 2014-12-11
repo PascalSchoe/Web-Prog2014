@@ -13,3 +13,10 @@ function elementLeeren(element)
         element.removeChild(element.firstChild);
     }
 }
+function wechselSichtbarkeit(element)
+{
+    if($(element).getAttribute("class") === "sichtbar")
+        $(element).setAttribute("class", "versteckt");
+    else
+        $(element).setAttribute("class", "sichtbar");
+}

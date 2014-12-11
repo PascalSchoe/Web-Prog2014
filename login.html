@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Autoren Section</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='http://fonts.googleapis.com/css?family=Syncopate:400,700|Montez|Yesteryear|Mrs+Sheppards' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="CSS/autorenAnwendungDesign.css">
+        <link rel="stylesheet" type="text/css" href="CSS/buttons.css">
+        <script type="text/javascript" src="JS/hilfsFunktionen.js"></script>
+        <script type="text/javascript" src="JS/initialisiereRegistrierung.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1 id="banner">Voilà</h1>
+            
+            <div id="loginBox">
+                <fieldset>
+                    <legend>Login</legend>
+                    <form action="login.php" method="post">
+                        <label for="benutzerNameLogin">Benutzername: </label>
+                        <input type="text" id="benutzerNameLogin" name="benutzerNameLogin" required>
+                        
+                        <label for="passwortLogin">Passwort: </label>
+                        <input type="password" id="passwortLogin" name="passwortLogin" required>
+                        
+                        <input type="submit" name="loginSubmit" value="einloggen">
+                    </form>
+                    <a onclick="wechselSichtbarkeit('registrierungsBox')" class="button bestaetigen">registrieren</a>
+                </fieldset> 
+            </div>
+            <div id="trennStrich">
+                
+            </div>
+            <div id="registrierungsBox" class="versteckt">      
+                <fieldset>
+                    <legend>Registrierung</legend>
+                    <form action="registrierung.php" method="post">
+                        <label for="benutzerNameReg">Benutzername: </label>
+                        <input type="text" id="benutzerNameReg" name="benutzerNameReg" required>
+                        
+                        <label for="passwortReg">Passwort: </label>
+                        <input type="password" id="passwortReg" name="passwortReg" required>
+                        
+                        <label for="passwortRegWdh">Passwort bitte wiederholen: </label>
+                        <input type="password" id="passwortRegWdh" name="passwortRegWdh" required>
+                        
+                        <input type="submit" id="regSubmit" name="regSubmit" value="registrieren">
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+    </body>
+</html>
