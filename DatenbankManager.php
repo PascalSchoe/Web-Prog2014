@@ -34,7 +34,7 @@ class DatenbankManager {
    }
    function fotoHochladen($daten){
        $name = $daten['file']["name"];
-       $id = DatenbankManager::$gridFS->storeUpload('file', $name);
+       $id = DatenbankManager::$gridFS->storeUpload("file", array("fotoName" => $name));
        
 
    }
@@ -61,19 +61,39 @@ class DatenbankManager {
    
    function erstelleBenutzer($benutzerName, $passwort)
    {
-       DatenbankManager::$benutzer->insert(array("benutzerName" => $benutzerName, "passwort" => $passwort));
+       DatenbankManager::$benutzer->insert(array("benutzerName" => $benutzerName, "passwort" => $passwort, "alben" => array()));
    }
    
    function benutzerEinloggen($benutzerName, $passwort)
    {
        $erfolgreich = false;
        
-       $benutzer = DatenbankManager::$benutzer->findOne(array("benutzerName" => $benutzerName, "passwort" => $passwort));
+       $benutzer = DatenbankManager::$benutzer->findOne(array("benutzerName" => $benutzerName, "passwort" => $passwort,));
        
        if($benutzer != null)
        {
            $erfolgreich = true;
        }
        return $erfolgreich;
+   }
+   
+   function gibAlleAlbenVon($benutzerName)
+   {
+       $benutzer = DatenbankManager::$benutzer->findOne(array("benutzerName" => $benutzerName));
+       
+       return $benutzer["alben"];
+   }
+   function speicherAlbumNamen($benutzerName, $albumName)
+   {
+       $alben = $this->gibAlleAlbenVon($benutzerName);
+       
+       array_push($alben, $albumName);
+       
+       $benutzer = DatenbankManager::$benutzer->findAndModify(
+                    array("benutzerName" => $benutzerName),
+                    array('$set' => array("alben" => $alben)),
+                    array(),
+                    array("new" => true)
+               );
    }
 }

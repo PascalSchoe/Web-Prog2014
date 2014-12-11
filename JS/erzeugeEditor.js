@@ -387,7 +387,6 @@ function textHinzufuegen(ursprung, index)
             xmlhttp.open("post", "elementHinzufuegen.php", true);
             xmlhttp.send(formData);
 
-            //mehr als 1 mal aus gelöst ? 
             xmlhttp.onreadystatechange = function() 
             {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 

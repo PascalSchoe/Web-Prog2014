@@ -1,3 +1,11 @@
+<html>
+    <head>
+        <script type="text/javascript" src="JS/hilfsFunktionen.js"></script>
+        <script type="text/javascript" src="JS/severBenachrichtigungen.js"></script> 
+    </head>
+    <body>
+
+
 <?php
     include './DatenbankManager.php';
     include './hilfsFunktionen.php';
@@ -20,10 +28,19 @@
                 $db->erstelleBenutzer($benutzerName, md5($passwort1));
                 header("Location: login.html");
             }
+            else 
+            {
+?>
+
+        <script type="text/javascript">
+            macheMeldung("login.html", "Leider gibt es schon einen Account mit diesem Namen");
+                </script>
+<?php
+            }
         }
     
     }
     
 ?>
-
-
+                </body>
+</html>

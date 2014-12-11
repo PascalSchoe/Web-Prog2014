@@ -41,7 +41,50 @@ and open the template in the editor.
     //filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa', EndColorStr='#dddddd');
 }
 
+.kanalUI
+{
+    /*
+    float: left;
+    width: 10%;
+    height: 10%;
+    margin: 0.2%;
+    margin-right: 10%;
+        padding:1%;*/
+    
+    display: inline-block;
+  background: #eeeeee; /* Old browsers */
+  background: -moz-linear-gradient(top, #eeeeee 0%, #eeeeee 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#eeeeee)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #eeeeee 0%,#eeeeee 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #eeeeee 0%,#eeeeee 100%); /* Opera11.10+ */
+  background: -ms-linear-gradient(top, #eeeeee 0%,#eeeeee 100%); /* IE10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
+  background: linear-gradient(top, #eeeeee 0%,#eeeeee 100%); /* W3C */
+  border: 1px solid #a1a1a1;
+  padding: 0 2em;
+  font: bold 1em/2em Arial, Helvetica;
+  text-decoration: none;
+  color: #333;
+  border-radius: .2em;
+  float:left;
+  margin-left: 5%;
+}
+.kanalUI:before
+{
+  float: left;
+  width: 1em;
+  text-align: center;
+  font-size: 1.7em;
+  margin: 0 0.5em 0 -1em;
+  padding: 0 .2em;
+  pointer-events: none;
 
+}
+.kanalUI:hover
+{
+    background: rgba(150,150,150,.8);
+    color:#fff;
+}
 .bestaetigen:before{
     content: "\2714";
     padding-right: 0.25em;
@@ -53,4 +96,20 @@ and open the template in the editor.
 .eintragen:before{
     content: "\2198";
     padding-right: 0.25em;
+}
+.bearbeiten:before
+{
+    content: "\270E";
+}
+.loeschen:before
+{
+    content: "\2718";
+}
+.betrachten:before
+{
+    content: "\25B6"; 
+}
+.freigeben:before
+{
+    content: "\271A";
 }

@@ -11,9 +11,15 @@
         $benutzerName = testeEingabe($_POST["benutzerNameLogin"]);
         $passwort = testeEingabe($_POST["passwortLogin"]);
         
-        if($db->benutzerEinloggen($benutzerName, $passwort))
+        if($db->benutzerEinloggen($benutzerName, md5($passwort)))
         {
             $_SESSION["benutzerName"] = $benutzerName;
+             
+            header("Location: kanal.html");
+        }
+        else 
+        {
+            echo "Leider kenne ich dich nicht ";
         }
     }
 
