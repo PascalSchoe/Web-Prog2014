@@ -11,6 +11,7 @@ class DatenbankManager {
    private static $datenbank;
    private static $benutzer;
    private static $alben;
+   private static $fotos;
    private static $gridFS;
   
    function __construct() {
@@ -23,20 +24,47 @@ class DatenbankManager {
        DatenbankManager::$verbindung = new Mongo();
        DatenbankManager::$datenbank = DatenbankManager::$verbindung->selectDB('PSchoe_Voila_DB');
        DatenbankManager::$benutzer = DatenbankManager::$datenbank->selectCollection('Benutzer');
+       DatenbankManager::$alben = DatenbankManager::$datenbank->selectCollection('Alben');
+       DatenbankManager::$fotos = DatenbankManager::$datenbank->selectCollection('Fotos');
        DatenbankManager::$gridFS = DatenbankManager::$datenbank->getGridFS();
-       //DatenbankManager::$gridFS = new MongoGridFS(DatenbankManager::$datenbank, "meineBilder");
-       
    }
    
    function textHinzufuegen($daten){
        $text = array("text" => $daten);
        DatenbankManager::$benutzer->insert($text);
    }
-   function fotoHochladen($daten){
-       $name = $daten['file']["name"];
-       $id = DatenbankManager::$gridFS->storeUpload("file", array("fotoName" => $name));
+   function fotoHochladen($fotoName, $benutzerName, $albumName, $fotoText){
        
-
+      // $fotos = $this->gibAlleXVon("alben", "albumName", $albumName, "fotos");
+       
+       
+       
+       $alben = DatenbankManager::$alben->findOne(array("albumName" => $albumName));
+       
+       $fotos = $alben["fotos"];
+       
+       
+       foreach($fotos as $foto)
+       {
+           if($foto == $fotoName)
+           {
+               return "fehlschlag";
+           }
+       }
+       
+       array_push($fotos, $fotoName);
+       
+       $album = DatenbankManager::$alben->findAndModify(
+                    array("benutzerName" => $benutzerName, "albumName" => $albumName),
+                    array('$set' => array("fotos" => $fotos)),
+                    array(),
+                    array("new" => true)
+               );
+       $id = DatenbankManager::$gridFS->storeUpload("file", array("fotoName" => $fotoName));
+       
+       DatenbankManager::$fotos->insert(array("fotoName" => $fotoName,"benutzerName" =>$benutzerName,"albumName" => $albumName, "fotoText" => $fotoText));
+       
+       return "erfolgreich";
    }
    
    function getImage($daten)
@@ -62,6 +90,7 @@ class DatenbankManager {
    function erstelleBenutzer($benutzerName, $passwort)
    {
        DatenbankManager::$benutzer->insert(array("benutzerName" => $benutzerName, "passwort" => $passwort, "alben" => array()));
+       
    }
    
    function benutzerEinloggen($benutzerName, $passwort)
@@ -76,16 +105,33 @@ class DatenbankManager {
        }
        return $erfolgreich;
    }
-   
+   /*
+   function gibAlleXVon($col,$key,$value, $item)
+   {
+       
+       $colItem = DatenbankManager::$$col->findOne(array($key => $value));
+       
+       return $colItem[$item];
+   }
+   */   
    function gibAlleAlbenVon($benutzerName)
    {
        $benutzer = DatenbankManager::$benutzer->findOne(array("benutzerName" => $benutzerName));
        
        return $benutzer["alben"];
    }
-   function speicherAlbumNamen($benutzerName, $albumName)
+   
+   function speicherAlbumNamen($benutzerName, $albumName, $template, $anordnung)
    {
-       $alben = $this->gibAlleAlbenVon($benutzerName);
+       $alben = $this->gibAlleAlbenVon($benutzerName,"alben");
+       
+       foreach($alben as $album)
+       {
+           if($album == $albumName)
+           {
+               return "fehlschlag";
+           }
+       }
        
        array_push($alben, $albumName);
        
@@ -95,5 +141,8 @@ class DatenbankManager {
                     array(),
                     array("new" => true)
                );
-   }
+       DatenbankManager::$alben->insert(array("albumName" => $albumName, "benutzerName" => $benutzerName, "template" => $template, "anordnung" => $anordnung, "albumTexte" => array(), "fotos" => array(),"freigabe" => "nein"));
+       
+       return "erfolgreich";
+   } 
 }

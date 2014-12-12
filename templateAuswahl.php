@@ -14,12 +14,12 @@
         <link href='http://fonts.googleapis.com/css?family=Poiret+One|Indie+Flower|Playball|Audiowide' rel='stylesheet' type='text/css'>
         <script type="text/javascript" src="JS/hilfsFunktionen.js"></script>
         <script type="text/javascript" src="erzeugeTemplate.js"></script>
-        
+        <script type="text/javascript" src="JS/templateAuswahl.js"></script>
         <link  rel="stylesheet" type="text/css" href="CSS/main.css">
         <link  rel="stylesheet" type="text/css" href="CSS/buttons.css">
         
     </head>
-    <body >
+    <body>
         <div id="sticky" ><a href="#top">Nach oben!</a></div>
         <p style="width: 50%; margin-left: 20%;margin-top: 3%; font-style: oblique">
             Hier kannst du entscheiden wie das Design deines Albums aussehen soll zu erst w&auml;hle bitte eine der folgenden Anordnungen von Bildern und Albumtexten.
@@ -60,6 +60,7 @@
                     </div>
                     <div class="clearFix"></div>
         </div>
+        
         <div id="templateWrapper">
             <div id="template1">
                 <h1>Temp1</h1>
@@ -72,7 +73,7 @@
                         blablablalblablablalb lablablalblablablalblablablalblablab lalblablablalblablabla  lblablablalblablablalblablablal
                         blablablalb lablablalblablabla lblablablalblablablalblablabl alblablablalblablablal blablablalblablablalblablablal
                     </p>
-                     <a onclick="starteEditor('template1')" class="button bestaetigen">Ich will dieses Template</a>
+                    <a onclick="starteEditor('template1')" class="button bestaetigen" href="#top">Ich will dieses Template</a>
                 </div>
 
                 <hr width="1" size="800" style="float: left">
@@ -81,7 +82,20 @@
                 </div>
                 <div class="clearFix"></div>
             </div>
-
+            <div id="inputContainer" class="versteckt">
+                <fieldset>
+                    <form action="elementHinzufuegen.php" method="post" id="albumNameForm">
+                        <legend>Albumname</legend>
+                        <p>
+                            <label for="albumName">Bitte gib einen Albumnamen ein: </label>
+                        </p>
+                        <p>
+                            <input type="text" name="albumName" id="albumName"autofocus>
+                        </p>
+                        <input type="submit" name="albumNameSub" value="abschicken">
+                    </form>
+                </fieldset>
+            </div>
             <div id="template2" >
                 <h1>Temp2</h1>
                 <div class="info" >
@@ -93,7 +107,7 @@
                         blablablalblablablalb lablablalblablablalblablablalblablab lalblablablalblablabla  lblablablalblablablalblablablal
                         blablablalb lablablalblablabla lblablablalblablablalblablabl alblablablalblablablal blablablalblablablalblablablal
                     </p>
-                    <a onclick="starteEditor('template2')" class="button bestaetigen">Ich will dieses Template</a>
+                    <a onclick="starteEditor('template2')" class="button bestaetigen" href="#top">Ich will dieses Template</a>
                 </div>
 
                 <hr width="1" size="800" style="float: left">
@@ -113,7 +127,7 @@
                         blablablalblablablalb lablablalblablablalblablablalblablab lalblablablalblablabla  lblablablalblablablalblablablal
                         blablablalb lablablalblablabla lblablablalblablablalblablabl alblablablalblablablal blablablalblablablalblablablal
                     </p>
-                   <a onclick="starteEditor('template3')" class="button bestaetigen">Ich will dieses Template</a>
+                   <a onclick="starteEditor('template3')" class="button bestaetigen" href="#top">Ich will dieses Template</a>
                 </div>
 
                 <hr width="1" size="800" style="float: left">
@@ -123,23 +137,6 @@
                 <div class="clearFix"></div>
             </div>
         </div>
-                <div id="tester" onclick="welcheAuswahl()">click mich an !</div>
-                <script type="text/javascript">
-                    function anordnungsAuswahl(auswahl){
-                     
-                        
-                        sessionStorage.setItem("anordnung", auswahl);
-                        window.document.getElementById("templateWrapper").setAttribute("class", sessionStorage.getItem("anordnung"));
-                        erzeugeTemp();
-                    }
-                    
-                    function starteEditor(template)
-                    {
-                       sessionStorage.setItem("template", template);
-                       window.location="editor.html";
-                    }
-                 
-                </script>
     </body>
 </html>
 

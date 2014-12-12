@@ -321,11 +321,9 @@ function bildHinzufuegen(ursprung)
         
         //Testen ob das auslösende Submit vom Image hochladen oder text Hochladen herrührt 
         
-            formData.append("file", fotoInput.files[0]);
-            //formData.append("fotoText", fotoText.value);
+            formData.append("file", fotoInput.files[0], "oefoeftoef");
+            formData.append("fotoText", fotoText.value);
             
-            //var xmlhttp = new XMLHttpRequest();
-
             xmlhttp.open("post", "elementHinzufuegen.php",true);
             xmlhttp.send(formData);
 
