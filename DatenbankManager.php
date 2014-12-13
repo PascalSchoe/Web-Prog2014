@@ -133,6 +133,13 @@ class DatenbankManager {
        return $benutzer["alben"];
    }
    
+   function gibAlbum($benutzerName, $albumName)
+   {
+       $album = DatenbankManager::$alben->findOne(array("benutzerName" => $benutzerName, "albumName" => $albumName));
+       
+       return $album;
+   }
+   
    function speicherAlbumNamen($benutzerName, $albumName, $template, $anordnung)
    {
        $alben = $this->gibAlleAlbenVon($benutzerName,"alben");
@@ -153,8 +160,69 @@ class DatenbankManager {
                     array(),
                     array("new" => true)
                );
-       DatenbankManager::$alben->insert(array("albumName" => $albumName, "benutzerName" => $benutzerName, "template" => $template, "anordnung" => $anordnung, "albumTexte" => array(), "fotos" => array(),"freigabe" => "nein"));
+       DatenbankManager::$alben->insert(array("albumName" => $albumName, "benutzerName" => $benutzerName, "template" => $template, "anordnung" => $anordnung, "albumTexte" => array(), "fotos" => array(),"freigabe" => "freigegeben"));
        
        return "erfolgreich";
-   } 
+   }
+   function wechselFreigabeVon($benutzerName, $albumName)
+   {
+       $album = DatenbankManager::$alben->findOne(array("benutzerName" => $benutzerName, "albumName" => $albumName));
+       
+       
+       $freigabe = $album["freigabe"];
+       
+       if($freigabe == "gesperrt")
+       {
+           $freigabe = "freigegeben";
+       }
+       else
+       {
+           $freigabe = "gesperrt";
+       }
+       
+       
+       $album = DatenbankManager::$alben->findAndModify(
+               array("benutzerName" => $benutzerName, "albumName" => $albumName),
+               array('$set' =>array("freigabe" => $freigabe)),
+               array(),
+               array("new" => true)
+               );
+       
+       header("Location: kanal.html");
+   }
+   function aenderPasswortVon($benutzerName, $passwortAlt, $passwortNeu)
+   {
+       $status;
+       
+       $benutzer = DatenbankManager::$benutzer->findOne(array("benutzerName" => $benutzerName));
+       
+       $passwortDb = $benutzer["passwort"];
+       
+       if($passwortAlt == $passwortDb)
+       {
+           if($passwortNeu != $passwortDb)
+           {
+               $passwort = DatenbankManager::$benutzer->findAndModify(
+                           array("benutzerName" => $benutzerName),
+                           array('$set' => array("passwort" => $passwortNeu)),
+                           array(),
+                           array("new" => true)
+                       );
+               
+               $status = "Dein Passwort wurde erfolgreich geaendert";
+               
+           }
+           else
+           {
+               $status = "Das neue Passwort darf nicht mit dem alten uebereinstimmen";
+           }
+       }
+       else 
+       {
+           $status = "Leider ist das eingegebene Passwort falsch";
+       }
+       
+       
+       return $status;
+   }
 }

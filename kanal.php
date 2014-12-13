@@ -7,9 +7,9 @@
     
    
     
+        
     if(isset($_GET["aufforderung"]))
     {
-        
         $aufforderung = $_GET["aufforderung"]; 
         ladeAlben("kanalInitialisierung", "");
     }
@@ -24,9 +24,10 @@
             $alben = $db->gibAlleAlbenVon($_SESSION["benutzerName"]);
             
             foreach ($alben as $album)
-            {
-                $antwort .= "<div class='albumIcon'><p>" . $album . "</p><img src='./res/img/albumIcon.jpg'><div class='kanalUI loeschen' style='margin-top: 10%'></div><div class='kanalUI bearbeiten'></div><div class='kanalUI freigeben'></div><div class='kanalUI betrachten'></div></div>";
-                //$antwort .= "<div class='albumIcon'><p>" . $album . "</p><img src='./res/img/albumIcon.jpg'><div class='kanalUI loeschen' style='margin-top: 10%'></div><div class='kanalUI bearbeiten'></div><div class='kanalUI freigeben'></div><div class='kanalUI betrachten'></div></div>";
+            {      
+                $albumEintrag = $db->gibAlbum($_SESSION["benutzerName"], $album);
+               
+                $antwort .= "<div class='albumIcon " . $albumEintrag["freigabe"] . "' id='". $album ."'><p>" . $album . "</p><img src='./res/img/albumIcon.png'><div class='kanalUI loeschen' style='margin-top: 10%'></div><div class='kanalUI bearbeiten'></div><div class='kanalUI freigeben' ></div><div class='kanalUI betrachten'></div></div>";
             }
             echo $antwort;
         }
@@ -37,5 +38,15 @@
         
         
     }
+    
+    if(isset($_GET["freigabe"]))
+    {
+        $db = new DatenbankManager();
+        
+        $db->wechselFreigabeVon($_SESSION["benutzerName"], $_GET["freigabe"]);
+    
+    }
+        
+    
     
 ?>

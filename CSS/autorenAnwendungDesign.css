@@ -123,6 +123,14 @@ body
     margin: 1%;
     text-align: center;
 }
+.freigegeben
+{
+    background: rgba(150,150,0,.7);
+}
+.gesperrt
+{
+    background: rgba(150,0,0,.7);
+}
 .albumIcon img{
     margin-left: 2%;
     margin-bottom: 1%;
@@ -140,6 +148,37 @@ body
 li
 {
     list-style: none;
+}
+#passwortAendernFieldset
+{
+    margin-top: 5%;
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+}
+#passwortAendernFieldset label
+{
+    width:20%;
+    float: left;
+    font-weight: bold;
+    margin-top: 2%;
+}
+.passwortInput
+{
+    width:75%;
+    float: left;
+    margin-top: 2%;
+}
+#passwortSub
+{
+    margin-top: 2%;
+    width: 50%;
+    float: left;
+    margin-left: 25%;
+}
+#navBar a
+{
+    margin-top: 10%;
 }
 
 

@@ -1,3 +1,6 @@
+window.addEventListener()
+
+
 var aufforderung;
 
 function ladeKanal()
@@ -16,6 +19,51 @@ function ladeKanal()
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
             {
                 content.innerHTML = xmlhttp.responseText;
+                
+                var loeschenButtons, bearbeitenButtons, freigebenButtons, betrachtenButtons;
+    
+                loeschenButtons = document.getElementsByClassName("loeschen");
+                bearbeitenButtons= document.getElementsByClassName("bearbeiten");
+                freigebenButtons= document.getElementsByClassName("freigeben");
+                betrachtenButtons= document.getElementsByClassName("betrachten");
+
+
+                for(var i = 0; i < loeschenButtons.length; i++)
+                {
+                    loeschenButtons[i].addEventListener("click",kanalBtnHandler, false);
+                    bearbeitenButtons[i].addEventListener("click",kanalBtnHandler, false);
+                    freigebenButtons[i].addEventListener("click",kanalBtnHandler, false);
+                    betrachtenButtons[i].addEventListener("click",kanalBtnHandler, false);
+                   
+                }
             }
-    } ;    
+    } ; 
+    
+    
+}
+function kanalBtnHandler(e)
+{
+    var src = e.target;
+    
+    console.log("Ich bin :" + e.target.getAttribute("class") +" Und mein Elternelment ist: "+ e.target.parentNode.getAttribute("id"));
+    
+    
+    switch(src.getAttribute("class"))
+    {
+        case "kanalUI loeschen":
+            
+            break;
+            
+        case "kanalUI bearbeiten":
+            
+            break;
+            
+        case "kanalUI freigeben":
+            window.location="kanal.php?freigabe=" + src.parentNode.getAttribute("id");
+            break;
+        
+        case "kanalUI betrachten":
+            
+            break;
+    }
 }

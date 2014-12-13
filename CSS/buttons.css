@@ -36,9 +36,8 @@ and open the template in the editor.
 }
 .button:hover 
 {
-    background: #ddd;
-    //background-image: linear-gradient(top, #fafafa, #ddd);
-    //filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa', EndColorStr='#dddddd');
+    background: rgba(150,150,150,.8);
+    color:#fff;
 }
 
 .kanalUI

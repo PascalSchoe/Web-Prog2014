@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Passwort aendern</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='http://fonts.googleapis.com/css?family=Syncopate:400,700|Montez|Yesteryear|Mrs+Sheppards' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="CSS/autorenAnwendungDesign.css">
+        <script type="text/javascript" src="JS/hilfsFunktionen.js"></script>
+        <script type="text/javascript" src="JS/passwortAendern.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1 id="banner">Voilà</h1>
+            <div id="trennStrich"></div>
+            <fieldset id="passwortAendernFieldset">
+                <legend>Passwort aendern...</legend>
+                    
+                <form action="passwortAendern.php" method="post" id="passwortForm" name="passwortForm">
+                    <p>
+                        <label for="passwortAlt">Altes Passwort</label>
+                        <input id="passwortAlt" name="passwortAlt" type="password" class="passwortInput" required>   
+                    </p>
+                    <p>
+                        <label for="passwortNeu">Neues Passwort</label>
+                        <input id="passwortNeu" name="passwortNeu" type="password" class="passwortInput" required>
+                    </p>
+                    <p>
+                        <input id="passwortSub" name="passwortSub" type="submit" value="aendern">
+                    </p>
+                </form>
+            </fieldset>
+        </div>
+    </body>
+</html>
