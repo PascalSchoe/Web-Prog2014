@@ -135,12 +135,18 @@ var fotoTextLabel = createE("label");
 fotoTextLabel.setAttribute("for", "fotoText");
 fotoTextLabel.setAttribute("id", "fotoTextLabel");
 
-var fotoTitleLabel = createE("label");
-fotoTitleLabel.setAttribute("for", "fotoTitleInput");
+var fotoName = createE("input");
+fotoName.setAttribute("id", "fotoName");
+fotoName.setAttribute("name", "fotoName");
+
+var fotoNameLabel = createE("label");
+fotoNameLabel.setAttribute("for", "fotoName");
+fotoNameLabel.innerHTML = "Fotoname: ";
 
 var p1Tag = createE("p");
 var p2Tag = createE("p");
 var p3Tag = createE("p");
+var p4Tag = createE("p");
 
 var editorInfo = createE("p");
 editorInfo.innerHTML = "Hier ";
@@ -298,15 +304,18 @@ function bildHinzufuegen(ursprung)
     input.setAttribute("type", "file");
     
     fieldset.appendChild(legend);
-    p1Tag.appendChild(fotoFileLabel);
-    p1Tag.appendChild(input);
+    p1Tag.appendChild(fotoNameLabel);
+    p1Tag.appendChild(fotoName);
     fieldset.appendChild(p1Tag);
-    
-    p2Tag.appendChild(fotoTextLabel);
+    p2Tag.appendChild(fotoFileLabel);
+    p2Tag.appendChild(input);
     fieldset.appendChild(p2Tag);
     
-    p3Tag.appendChild(fotoText);
+    p3Tag.appendChild(fotoTextLabel);
     fieldset.appendChild(p3Tag);
+    
+    p4Tag.appendChild(fotoText);
+    fieldset.appendChild(p4Tag);
     
     fieldset.appendChild(submit);
     fotoForm.appendChild(fieldset);
@@ -319,9 +328,7 @@ function bildHinzufuegen(ursprung)
 
         var formData = new FormData();
         
-        //Testen ob das auslösende Submit vom Image hochladen oder text Hochladen herrührt 
-        
-            formData.append("file", fotoInput.files[0], "oefoeftoef");
+            formData.append("file", fotoInput.files[0], fotoName.value);
             formData.append("fotoText", fotoText.value);
             
             xmlhttp.open("post", "elementHinzufuegen.php",true);

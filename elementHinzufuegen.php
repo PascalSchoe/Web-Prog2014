@@ -7,7 +7,7 @@
     
         if(isset($_POST["albumText"]))
         {
-           $db->speicherAlbumNamen($_SESSION["benutzerName"],$_POST["albumText"]);
+           $db->speicherAlbumText($_SESSION["benutzerName"], $_SESSION["albumName"], $_POST["albumText"]);
             echo $_POST["albumText"];
            //echo $db->gibAlleAlbenVon("pschoe");
         }

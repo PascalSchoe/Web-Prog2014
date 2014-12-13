@@ -29,9 +29,21 @@ class DatenbankManager {
        DatenbankManager::$gridFS = DatenbankManager::$datenbank->getGridFS();
    }
    
-   function textHinzufuegen($daten){
-       $text = array("text" => $daten);
-       DatenbankManager::$benutzer->insert($text);
+   
+   function speicherAlbumText($benutzerName,$albumName, $albumText)
+   {
+       $album = DatenbankManager::$alben->findOne(array("benutzerName" => $benutzerName, "albumName" => $albumName));
+       
+       $albumTexte = $album["albumTexte"];
+
+       array_push($albumTexte, $albumText);
+       
+       $album = DatenbankManager::$alben->findAndModify(
+                    array("benutzerName" => $benutzerName, "albumName" => $albumName),
+                    array('$set' => array("albumTexte" => $albumTexte)),
+                    array(),
+                    array("new" => true)
+               );
    }
    function fotoHochladen($fotoName, $benutzerName, $albumName, $fotoText){
        
