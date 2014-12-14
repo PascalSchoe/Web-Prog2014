@@ -1,4 +1,3 @@
-window.addEventListener()
 
 
 var aufforderung;
@@ -9,7 +8,7 @@ function ladeKanal()
     
     var content = $("content");
     
-    aufforderung = "ladeKanal";
+    aufforderung = "kanalInitialisierung";
     
     xmlhttp.open("get", "kanal.php?aufforderung="+ aufforderung, true);
     xmlhttp.send();
@@ -41,6 +40,52 @@ function ladeKanal()
     
     
 }
+
+window.addEventListener("load", function(){
+    var suchEingabeForm = $("suchEingabeForm");
+    var suchEingabe = $("suchEingabe");
+    
+    suchEingabeForm.addEventListener("submit", function(e){
+        e.preventDefault();
+        var  xmlhttp = new XMLHttpRequest();
+    
+        var content = $("content");
+    
+        aufforderung = "suche";
+
+        xmlhttp.open("get", "kanal.php?aufforderung="+ aufforderung +"&suchEingabe=" + suchEingabe.value, true);
+        xmlhttp.send();
+
+        xmlhttp.onreadystatechange = function() 
+        {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+                {
+                    content.innerHTML = xmlhttp.responseText;
+                    
+                    var loeschenButtons, bearbeitenButtons, freigebenButtons, betrachtenButtons;
+    
+                    loeschenButtons = document.getElementsByClassName("loeschen");
+                    bearbeitenButtons= document.getElementsByClassName("bearbeiten");
+                    freigebenButtons= document.getElementsByClassName("freigeben");
+                    betrachtenButtons= document.getElementsByClassName("betrachten");
+
+
+                    for(var i = 0; i < loeschenButtons.length; i++)
+                    {
+                        loeschenButtons[i].addEventListener("click",kanalBtnHandler, false);
+                        bearbeitenButtons[i].addEventListener("click",kanalBtnHandler, false);
+                        freigebenButtons[i].addEventListener("click",kanalBtnHandler, false);
+                        betrachtenButtons[i].addEventListener("click",kanalBtnHandler, false);
+
+                    }
+                }
+        };
+    }, false);
+    
+    
+}, false);
+
+
 function kanalBtnHandler(e)
 {
     var src = e.target;

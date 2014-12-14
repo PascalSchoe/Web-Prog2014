@@ -2,17 +2,14 @@
     session_start();
     
     include './DatenbankManager.php';
+    include './hilfsFunktionen.php';
     
     $aufforderung;
     
    
     
         
-    if(isset($_GET["aufforderung"]))
-    {
-        $aufforderung = $_GET["aufforderung"]; 
-        ladeAlben("kanalInitialisierung", "");
-    }
+    
     
     function ladeAlben($ausloeser, $suchStr)
     {
@@ -33,10 +30,35 @@
         }
         elseif ($ausloeser == "suche") 
         {
-            //suche nach allen alben die suchstr beinhalten
+            $antwort = "Kein Treffer unter >> " . $suchStr . " <<";
+           
+            $alben = $db->gibAlleAlbenVon($_SESSION["benutzerName"]);
+            
+                
+            $albumEintrag = $db->gibAlbum($_SESSION["benutzerName"], $suchStr);
+           
+            if($albumEintrag != null)
+            {
+                $antwort = "<div class='albumIcon " . $albumEintrag["freigabe"] . "' id='". $albumEintrag["albumName"] ."'><p>" . $albumEintrag["albumName"] . "</p><img src='./res/img/albumIcon.png'><div class='kanalUI loeschen' style='margin-top: 10%'></div><div class='kanalUI bearbeiten'></div><div class='kanalUI freigeben' ></div><div class='kanalUI betrachten'></div></div>";
+            }
+            
+            echo $antwort;
+            
         }
         
         
+    }
+    
+    if(isset($_GET["aufforderung"]))
+    {
+        $aufforderung = $_GET["aufforderung"]; 
+        if($aufforderung == "kanalInitialisierung")
+            ladeAlben("kanalInitialisierung", "");
+        elseif($aufforderung == "suche")
+        {
+            ladeAlben("suche", testeEingabe($_GET["suchEingabe"]));
+        }
+            
     }
     
     if(isset($_GET["freigabe"]))

@@ -180,5 +180,23 @@ li
 {
     margin-top: 10%;
 }
-
+#suchEingabeForm
+{
+    margin-top: 5%;
+    margin-left: 3%;
+    
+}
+#suchEingabeSub
+{
+    display: none;
+}
+#suchEingabeForm label
+{
+    font-weight: bold;
+    font-size: 1.5em;
+}
+#suchEingabeForm input
+{
+    width: 85%
+}
 

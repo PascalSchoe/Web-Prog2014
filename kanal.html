@@ -14,13 +14,21 @@
     <body onload="ladeKanal()">
         <div id="wrapper">
             <h1 id="banner">Voilà</h1>
-            <div id="trennStrich"></div>
+            <div id="trennStrich">
+            </div>
             <div id="navBar">
                 <ul>
+                    <li><a href="kanal.html" class="button">Home</a></li>
                     <li><a href="templateAuswahl.php" class="button">Album erstellen</a></li>
                     <li><a href="#" class="button">Alben anderer Autoren</a></li>
                     <li><a href="passwortAendern.html" class="button">Passwort aendern</a></li>
-                    <li></li>
+                    <li>
+                        <form action="kanal.php" method="get" id="suchEingabeForm" name="suchEingabeForm">
+                            <label for="suchEingabe">Albumsuche</label>
+                            <input type="text" id="suchEingabe" name="suchEingabe" required>
+                            <input type="submit" id="suchEingabeSub">
+                        </form>
+                    </li>
                 </ul>
             </div>
             <div id="content" >      
