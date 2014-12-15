@@ -39,5 +39,17 @@
           }
         }
         
+        if(isset($_GET["editieren"]))
+        {
+            
+            $album = array($db->gibAlbum($_SESSION["benutzerName"], $_GET["editieren"]));
+            //$album = $db->gibAlbum($_SESSION["benutzerName"], $suchStr);
+            echo json_encode($album);
+            
+            
+            //print($db->gibAlbum($_SESSION["benutzerName"], $_GET["editieren"]));
+                        
+        }
+        
       
 ?>

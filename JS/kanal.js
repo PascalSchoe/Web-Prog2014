@@ -100,7 +100,8 @@ function kanalBtnHandler(e)
             break;
             
         case "kanalUI bearbeiten":
-            
+            sessionStorage.setItem("albumName", src.parentNode.getAttribute("id"));
+            window.location="editor.html";
             break;
             
         case "kanalUI freigeben":
