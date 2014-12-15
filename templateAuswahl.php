@@ -82,7 +82,7 @@
                 </div>
                 <div class="clearFix"></div>
             </div>
-            <div id="inputContainer" class="versteckt">
+            <div id="inputContainerTemplateAuswahl" class="versteckt">
                 <fieldset>
                     <form action="elementHinzufuegen.php" method="post" id="albumNameForm">
                         <legend>Albumname</legend>

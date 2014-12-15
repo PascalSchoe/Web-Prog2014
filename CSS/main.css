@@ -588,8 +588,28 @@ img{
     float: left;
     text-align: center;
     padding: 5vmax;
+    
+}
+#inputContainerTemplateAuswahl
+{
+    background: rgba(25,25,25,0.75);
+    color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 40vmax;
+    margin-left: 20vmax;
+    margin-top: -40vmax;
+    z-index: 24234;
+    float: left;
+    text-align: center;
+    padding: 5vmax;
+    position:  absolute;
 }
 #inputContainer button
+{
+    width: 20vmax;
+}
+#inputContainerTemplateAuswahl button
 {
     width: 20vmax;
 }

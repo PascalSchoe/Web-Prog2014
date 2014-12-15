@@ -12,7 +12,7 @@ function starteEditor(template)
 {
    sessionStorage.setItem("template", template);
 
-   wechselSichtbarkeit("inputContainer");
+   wechselSichtbarkeit("inputContainerTemplateAuswahl");
 
 
 
