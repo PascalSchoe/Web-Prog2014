@@ -68,7 +68,12 @@
         $db->wechselFreigabeVon($_SESSION["benutzerName"], $_GET["freigabe"]);
     
     }
+    if(isset($_GET["loeschen"]))
+    {
+        $db = new DatenbankManager();
         
+        $db->albumLoeschen($_SESSION["benutzerName"], $_GET["loeschen"]);
+    }
     
     
 ?>

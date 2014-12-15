@@ -190,6 +190,34 @@ class DatenbankManager {
        
        header("Location: kanal.html");
    }
+   
+   function albumLoeschen($benutzerName, $albumName)
+   {
+      $albenNeu = array();
+       
+       DatenbankManager::$alben->remove(array("benutzerName" => $benutzerName, "albumName" => $albumName), array("justOne" => true));
+       
+       $benutzer = DatenbankManager::$benutzer->findOne(array("benutzerName" => $benutzerName));
+       
+       $alben = $benutzer["alben"];
+       
+       foreach($alben as $album)
+       {
+           if($album != $albumName)
+           {
+               array_push($albenNeu, $album);
+           }
+       }
+       $benutzerNeu = DatenbankManager::$benutzer->findAndModify(
+                array("benutzerName" => $benutzerName),
+                array('$set' =>array("alben" => $albenNeu)),
+                array(),
+                array("new" => true)
+               );
+       
+        header("Location: kanal.html");
+   }
+   
    function aenderPasswortVon($benutzerName, $passwortAlt, $passwortNeu)
    {
        $status;

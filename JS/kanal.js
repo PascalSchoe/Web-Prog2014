@@ -96,7 +96,7 @@ function kanalBtnHandler(e)
     switch(src.getAttribute("class"))
     {
         case "kanalUI loeschen":
-            
+            window.location = "kanal.php?loeschen=" + src.parentNode.getAttribute("id");
             break;
             
         case "kanalUI bearbeiten":
