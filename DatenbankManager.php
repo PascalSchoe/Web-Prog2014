@@ -142,7 +142,7 @@ class DatenbankManager {
    
    function speicherAlbumNamen($benutzerName, $albumName, $template, $anordnung)
    {
-       $alben = $this->gibAlleAlbenVon($benutzerName,"alben");
+       $alben = $this->gibAlleAlbenVon($benutzerName);
        
        foreach($alben as $album)
        {
@@ -253,4 +253,10 @@ class DatenbankManager {
        
        return $status;
    }
+   function gibAlleBilderVon($benutzerName, $albumName)
+   {
+       
+   }
 }
+
+//http://www.fh-wedel.de/~si/seminare/ss01/Ausarbeitung/5.xslt/xslt6.htm

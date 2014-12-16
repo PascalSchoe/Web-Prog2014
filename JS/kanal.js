@@ -101,6 +101,7 @@ function kanalBtnHandler(e)
             
         case "kanalUI bearbeiten":
             sessionStorage.setItem("albumName", src.parentNode.getAttribute("id"));
+            sessionStorage.setItem("modus", "editieren");
             window.location="editor.html";
             break;
             

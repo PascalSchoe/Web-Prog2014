@@ -35,6 +35,7 @@ function starteEditor(template)
            {
                if(xmlhttp.responseText == "erfolgreich")
                {
+                   sessionStorage.setItem("albumName", albumName.value);
                    window.location="editor.html";
                }
                else

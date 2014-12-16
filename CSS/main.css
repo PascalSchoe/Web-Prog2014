@@ -425,23 +425,6 @@ img{
 }
 
 
-//links  color/ boxshadow red
-#vorschau
-{
-    height: 400px;
-}
-#sideBar
-{
-    width: 19vw;
-    height: 400px;
-    float: left;
-    text-align: justify;
-    padding: 0.5%;
-    font-weight: bold;
-    font-size: 1.1em;
-    color: #ddd;
-    
-}
 .templateEinsVorschau{
     float: left;
     background-image: url(../res/img/backgrounds/holzTextur_2.jpg);

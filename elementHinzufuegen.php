@@ -6,32 +6,29 @@
         $db = new DatenbankManager();
     
         if(isset($_POST["albumText"]))
-        {
-           $db->speicherAlbumText($_SESSION["benutzerName"], $_SESSION["albumName"], $_POST["albumText"]);
-            echo $_POST["albumText"];
-           //echo $db->gibAlleAlbenVon("pschoe");
+        { 
+           $db->speicherAlbumText($_SESSION["benutzerName"], $_POST["albumName"], $_POST["albumText"]);
+           echo $_POST["albumText"];
         }
-        /*
-        */
-        if(isset($_POST["albumName"]))
+      
+        
+        if(isset($_POST["albumName"]) && (!isset($_POST["albumText"]) && (!isset($_FILES["file"]))))
         {
             $status = $db->speicherAlbumNamen($_SESSION["benutzerName"],testeEingabe($_POST["albumName"]),$_POST["template"], $_POST["anordnung"]);
-            
-            if($status == "erfolgreich")
-            {
-                $_SESSION["albumName"] =testeEingabe($_POST["albumName"]);
-            }
+           
             echo $status;
         }
         
         if(isset($_FILES["file"]))
         {
             //eingabe testen
-          $status = $db->fotoHochladen($_FILES["file"]["name"], $_SESSION["benutzerName"], $_SESSION["albumName"],$_POST["fotoText"]);
+          $status = $db->fotoHochladen($_FILES["file"]["name"], $_SESSION["benutzerName"], $_POST["albumName"],$_POST["fotoText"]);
           
           if($status == "erfolgreich")
           {
             echo "<img class='vorschauBild' src='getImage.php?filename=".$_FILES["file"]["name"]."'>";   
+              //klappt nicht wie gewollt
+            //echo "getImage.php?filename=".$_FILES["file"]["name"];
           }
           else
           {
@@ -41,14 +38,9 @@
         
         if(isset($_GET["editieren"]))
         {
-            
             $album = array($db->gibAlbum($_SESSION["benutzerName"], $_GET["editieren"]));
-            //$album = $db->gibAlbum($_SESSION["benutzerName"], $suchStr);
-            echo json_encode($album);
             
-            
-            //print($db->gibAlbum($_SESSION["benutzerName"], $_GET["editieren"]));
-                        
+            echo json_encode($album);            
         }
         
       

@@ -4,26 +4,64 @@
  * bei Klick auf eines dieser Elemente erscheint ein Popup welches den Inhalt der eingefügt werden soll abfragt, eingegebene Inhalte
  * werden an ein Php script geschickt und auf der Seite als Vorschau gezeigt sowie als Xml auf dem Server hinterlegt
  */
+
+var xmlhttp = new XMLHttpRequest();
+var album;
+
 window.addEventListener("load", function(){
-    var xmlhttp = new XMLHttpRequest();
-    
-    if(sessionStorage.getItem("albumName") != null)
+    if(sessionStorage.getItem("modus") === "editieren")
     {
-                xmlhttp.open("get", "elementHinzufuegen.php?editieren="+ sessionStorage.getItem("albumName"),true);
-                xmlhttp.send();
+        //initialisiereEditor("albumEditieren");
+        xmlhttp.open("get", "elementHinzufuegen.php?editieren="+ sessionStorage.getItem("albumName"),true);
+        xmlhttp.send();
 
-
-                xmlhttp.onreadystatechange = function() 
+        xmlhttp.onreadystatechange = function() 
+        {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+            {
+                album = JSON.parse(xmlhttp.responseText);
+                
+                
+                sessionStorage.setItem("template", album[0]["template"]);
+                sessionStorage.setItem("anordnung", album[0]["anordnung"]);
+               
+               if(album[0]["albumTexte"].length > 0)
                 {
-                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
-                        {
-                            var album = JSON.parse(xmlhttp.responseText);
-                           // alert(album[0]["albumName"]);
-                        }
-                        
-                }        
+                    counter = 1;
+                    
+                    for(x in album[0]["albumTexte"])
+                    {
+                        sessionStorage.setItem("albumText"+counter, album[0]["albumTexte"][x]);
+                        counter++;
+                    }
+                }
+               
+                if(album[0]["fotos"].length > 0)
+                {
+                    counter = 1;
+                    
+                    for(x in album[0]["fotos"])
+                    {
+                        sessionStorage.setItem("bild"+counter, "<img class='vorschauBild' src='getImage.php?filename=" + album[0]["fotos"][x] + "'>");
+                        counter++;
+                    }
+                }
+                
+              initialisiereEditor();    
+            }
+        }
     }
+    else
+    {
+        initialisiereEditor();
+    }
+
     
+    
+});
+
+function initialisiereEditor()
+{
     var template = sessionStorage.getItem("template");
     var anordnung = sessionStorage.getItem("anordnung");
     var vorschauContainer = $("vorschau");
@@ -35,7 +73,8 @@ window.addEventListener("load", function(){
 
     var albumTextMaxBuchstaben = new Array(3);
 
-
+    var albumNameHeader = $("albumNameHeader");
+    albumNameHeader.innerHTML = "Das ist dein Album: " + sessionStorage.getItem("albumName");
 
     bild1 = createE("div");
     bild2 = createE("div");
@@ -54,118 +93,57 @@ window.addEventListener("load", function(){
     //Bilder
     bild1.setAttribute("id","bild1");
     bild1.setAttribute("class","bild1");
-    bild1.setAttribute("onclick","bildHinzufuegen('bild1')");
-
+    bild1.addEventListener("click", bildHinzufuegen, false);
+   
     bild2.setAttribute("id","bild2");
     bild2.setAttribute("class","bild2");
-    bild2.setAttribute("onclick","bildHinzufuegen('bild2')");
-
+    bild2.addEventListener("click", bildHinzufuegen, false);
+    
     bild3.setAttribute("id","bild3");
     bild3.setAttribute("class","bild3");
-    bild3.setAttribute("onclick","bildHinzufuegen('bild3')");
-
+    bild3.addEventListener("click", bildHinzufuegen, false);
+    
     bild4.setAttribute("id","bild4");
     bild4.setAttribute("class","bild4");
-    bild4.setAttribute("onclick","bildHinzufuegen('bild4')");
-
+    bild4.addEventListener("click", bildHinzufuegen, false);
+    
     bild5.setAttribute("id","bild5");
     bild5.setAttribute("class","bild5");
-    bild5.setAttribute("onclick","bildHinzufuegen('bild5')");
-
+    bild5.addEventListener("click", bildHinzufuegen, false);
+    
     bild6.setAttribute("id","bild6");
     bild6.setAttribute("class","bild6");
-    bild6.setAttribute("onclick","bildHinzufuegen('bild6')");
-
+    bild6.addEventListener("click", bildHinzufuegen, false);
+    
     bild7.setAttribute("id","bild7");
     bild7.setAttribute("class","bild7");
-    bild7.setAttribute("onclick","bildHinzufuegen('bild7')");
-
+    bild7.addEventListener("click", bildHinzufuegen, false);
+    
     bild8.setAttribute("id","bild8");
     bild8.setAttribute("class","bild");
-    bild8.setAttribute("onclick","bildHinzufuegen('bild8')");
-
-
+    bild8.addEventListener("click", bildHinzufuegen, false);
+    
+    
     //Albumtexte
     albumText1.setAttribute("id","albumText1");
     albumText1.setAttribute("class","albumText1");
-    albumText1.setAttribute("onclick","textHinzufuegen('albumText1',0)");
-
+    albumText1.addEventListener("click", textHinzufuegen, false);
+    
     albumText2.setAttribute("id","albumText2");
     albumText2.setAttribute("class","albumText2");
-    albumText2.setAttribute("onclick","textHinzufuegen('albumText2',1)");
-
+    albumText2.addEventListener("click", textHinzufuegen, false);
+ 
     albumText3.setAttribute("id","albumText3");
     albumText3.setAttribute("class","albumText3");
-    albumText3.setAttribute("onclick","textHinzufuegen('albumText3',2)");
-
+    albumText3.addEventListener("click", textHinzufuegen, false);
+ 
 
     //Sonstiges
     var clearFix = createE("div");
     clearFix.setAttribute("class", "clearFix");
-
-    var inputContainer = createE("div");
-    inputContainer.setAttribute("id", "inputContainer");
-    inputContainer.setAttribute("class", "versteckt");
-
-    var fotoForm = createE("form");
-    fotoForm.setAttribute("id", "fotoForm");
-    fotoForm.setAttribute("name", "fotoForm");
-    fotoForm.setAttribute("action","elementHinzufuegen.php");
-    fotoForm.setAttribute("method","post");
-    fotoForm.setAttribute("enctype","multipart/form-data");
-
-    var textForm = createE("form");
-    textForm.setAttribute("id", "textForm");
-    textForm.setAttribute("name", "textForm");
-    textForm.setAttribute("action","elementHinzufuegen.php");
-    textForm.setAttribute("method","post");
-
-
-
-    var input = createE("input");
-    input.setAttribute("id", "fotoInput");
-    input.setAttribute("name", "fotoInput");
-
-
-    var textArea = createE("textarea");
-    textArea.setAttribute("name", "albumTextInput");
-    textArea.setAttribute("id", "albumTextInput");
-
-    var fotoText = createE("textarea");
-    fotoText.setAttribute("maxlength", "250");
-    fotoText.setAttribute("name", "fotoText");
-
-    var submit = createE("button");
-    submit.setAttribute("type", "submit");
-    submit.setAttribute("id", "hinzufuegen");
-
-
-    var fieldset = createE("fieldset");
-    var legend = createE("legend");
-    var albumTextLabel = createE("label");
-    albumTextLabel.setAttribute("for", "albumTextInput");
-
-    var fotoFileLabel = createE("label");
-    fotoFileLabel.setAttribute("for", "fotoInput");
-    fotoFileLabel.setAttribute("id","fotoFileLabel");
-
-    var fotoTextLabel = createE("label");
-    fotoTextLabel.setAttribute("for", "fotoText");
-    fotoTextLabel.setAttribute("id", "fotoTextLabel");
-
-    var fotoName = createE("input");
-    fotoName.setAttribute("id", "fotoName");
-    fotoName.setAttribute("name", "fotoName");
-
-    var fotoNameLabel = createE("label");
-    fotoNameLabel.setAttribute("for", "fotoName");
-    fotoNameLabel.innerHTML = "Fotoname: ";
-
-    var p1Tag = createE("p");
-    var p2Tag = createE("p");
-    var p3Tag = createE("p");
-    var p4Tag = createE("p");
-
+    
+    
+    
     var editorInfo = createE("p");
     editorInfo.innerHTML = "Hier ";
 
@@ -177,7 +155,7 @@ window.addEventListener("load", function(){
     {
       vorschauContainer.setAttribute("class", "templateZweiVorschau " +anordnung);  
     }
-    else
+    else if(template === "template3")
     {
         vorschauContainer.setAttribute("class", "templateDreiVorschau " +anordnung);
     }
@@ -197,11 +175,74 @@ window.addEventListener("load", function(){
             vorschauContainer.appendChild(bild6);
             vorschauContainer.appendChild(albumText3);
 
+            if(sessionStorage.getItem("modus") === "editieren")
+            {   
+                bild1.innerHTML = sessionStorage.getItem("bild1");
+                bild2.innerHTML = sessionStorage.getItem("bild2");
+                bild3.innerHTML = sessionStorage.getItem("bild3");
+                bild4.innerHTML = sessionStorage.getItem("bild4");
+                bild5.innerHTML = sessionStorage.getItem("bild5");
+                bild6.innerHTML = sessionStorage.getItem("bild6");
+                
+                albumText1.innerHTML = sessionStorage.getItem("albumText1");
+                albumText2.innerHTML = sessionStorage.getItem("albumText2");
+                albumText3.innerHTML = sessionStorage.getItem("albumText3");
+            }
+            
+            if(!sessionStorage.getItem("bild1"))
+            {
+                 bild1.innerHTML ="1#";
+            }
+            else
+            {
+                bild1.innerHTML = sessionStorage.getItem("bild1");
+            }
+            if(!sessionStorage.getItem("bild2"))
+            {
+                 bild2.innerHTML ="2#";
+            }
+            else
+            {
+                bild2.innerHTML = sessionStorage.getItem("bild2");
+            }
+            if(!sessionStorage.getItem("bild3"))
+            {
+                 bild3.innerHTML ="3#";
+            }
+            else
+            {
+                bild3.innerHTML = sessionStorage.getItem("bild3");
+            }
+            if(!sessionStorage.getItem("bild4"))
+            {
+                 bild4.innerHTML ="4#";
+            }
+            else
+            {
+                bild4.innerHTML = sessionStorage.getItem("bild4");
+            }
+            if(!sessionStorage.getItem("bild5"))
+            {
+                 bild5.innerHTML ="5#";
+            }
+            else
+            {
+                bild5.innerHTML = sessionStorage.getItem("bild5");
+            }
+            if(!sessionStorage.getItem("bild6"))
+            {
+                 bild6.innerHTML ="6#";
+            }
+            else
+            {
+                bild6.innerHTML = sessionStorage.getItem("bild6");
+            }
+            
+            
             albumTextMaxBuchstaben[0] = 300;
             albumTextMaxBuchstaben[1] = 300;
             albumTextMaxBuchstaben[2] = 300;
 
-            vorschauContainer.appendChild(inputContainer);
             break;
 
         case "anordnung2":
@@ -228,6 +269,7 @@ window.addEventListener("load", function(){
             albumTextMaxBuchstaben[1] = 200;
 
             break;
+            
         case "anordnung4":
             vorschauContainer.appendChild(albumText1);
             vorschauContainer.appendChild(bild2);
@@ -237,6 +279,7 @@ window.addEventListener("load", function(){
             albumTextMaxBuchstaben[1] = 900;
 
             break;
+            
         case "anordnung5":
             vorschauContainer.appendChild(bild1);
             vorschauContainer.appendChild(bild2);
@@ -248,6 +291,7 @@ window.addEventListener("load", function(){
             albumTextMaxBuchstaben[1] = 150;
 
             break;
+            
         case "anordnung6":
             vorschauContainer.appendChild(bild1);
             vorschauContainer.appendChild(bild2);
@@ -258,6 +302,7 @@ window.addEventListener("load", function(){
             albumTextMaxBuchstaben[0] = 300;
 
             break;
+            
         case "anordnung7":
             vorschauContainer.appendChild(bild1);
             vorschauContainer.appendChild(albumText1);
@@ -272,6 +317,7 @@ window.addEventListener("load", function(){
             albumTextMaxBuchstaben[2] = 300;
 
             break;
+            
         case "anordnung8":
             vorschauContainer.appendChild(bild1);
             vorschauContainer.appendChild(bild2);
@@ -282,6 +328,7 @@ window.addEventListener("load", function(){
             albumTextMaxBuchstaben[0] = 300;
 
             break;
+            
         case "anordnung9":
             vorschauContainer.appendChild(bild1);
             vorschauContainer.appendChild(bild2);        
@@ -296,146 +343,108 @@ window.addEventListener("load", function(){
             albumTextMaxBuchstaben[0] = 600;
             break;
     }
+}
+
+function bildHinzufuegen(e)
+{
+    var srcID = e.target.getAttribute("id");
+    
+    
+    var inputContainerFoto = $("inputContainerFoto");
+    wechselSichtbarkeit("inputContainerFoto");
+    
+    var fotoForm = $("fotoForm");
+    var fotoName = $("fotoName");
+    var fotoFile = $("fotoFile");
+    var fotoText = $("fotoText");
+    var fotoSubmit = $("fotoSubmit");
+    
+    fotoForm.addEventListener("submit", function(e){
+        e.preventDefault();
+
+        var formData = new FormData();
+
+        formData.append("file", fotoFile.files[0], fotoName.value);
+        formData.append("fotoText", fotoText.value);
+        formData.append("albumName", sessionStorage.getItem("albumName"));
+        xmlhttp.open("post", "elementHinzufuegen.php",true);
+        xmlhttp.send(formData);
 
 
-
-
-
-    function bildHinzufuegen(ursprung)
-    {
-        elementLeeren(fieldset);
-        elementLeeren(p1Tag);
-        elementLeeren(p2Tag);
-        elementLeeren(p3Tag);
-
-
-        submit.innerHTML = "fertig";
-        fotoFileLabel.innerHTML= "W&auml;hle ein Foto: ";
-        fotoTextLabel.innerHTML= "Fototext(optional): ";
-        legend.innerHTML="Bild hochladen...";
-
-        fotoText.setAttribute("rows", "4");
-        fotoText.setAttribute("cols", "50");
-
-        //inputContainer.setAttribute("class", "sichtbar");
-        wechselSichtbarkeit("inputContainer");
-        input.setAttribute("type", "file");
-
-        fieldset.appendChild(legend);
-        p1Tag.appendChild(fotoNameLabel);
-        p1Tag.appendChild(fotoName);
-        fieldset.appendChild(p1Tag);
-        p2Tag.appendChild(fotoFileLabel);
-        p2Tag.appendChild(input);
-        fieldset.appendChild(p2Tag);
-
-        p3Tag.appendChild(fotoTextLabel);
-        fieldset.appendChild(p3Tag);
-
-        p4Tag.appendChild(fotoText);
-        fieldset.appendChild(p4Tag);
-
-        fieldset.appendChild(submit);
-        fotoForm.appendChild(fieldset);
-        inputContainer.appendChild(fotoForm);
-
-
-
-        fotoForm.addEventListener("submit", function(e){
-            e.preventDefault();
-
-            var formData = new FormData();
-
-                formData.append("file", fotoInput.files[0], fotoName.value);
-                formData.append("fotoText", fotoText.value);
-
-                xmlhttp.open("post", "elementHinzufuegen.php",true);
-                xmlhttp.send(formData);
-
-
-                xmlhttp.onreadystatechange = function() 
-                {
-                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
-                        {
-
-                            $(ursprung).innerHTML = xmlhttp.responseText;
-                            inputContainer.setAttribute("class", "versteckt");
-
-                        }
-                }        
-
-
-        }, false);
-
-    }
-    function textHinzufuegen(ursprung, index)
-    {
-        elementLeeren(fieldset);
-
-        elementLeeren(p1Tag);
-        elementLeeren(p2Tag);
-        elementLeeren(p3Tag);
-
-        wechselSichtbarkeit("inputContainer");
-
-        submit.innerHTML = "fertig";
-
-        legend.innerHTML = "Mach bitte deine Eingabe:";
-        albumTextLabel.innerHTML= "Text fuer " + ursprung +"(max "+ albumTextMaxBuchstaben[index] +" Buchstaben): ";
-        textArea.setAttribute("maxlength", albumTextMaxBuchstaben[index]);
-        textArea.setAttribute("rows", "4");
-        textArea.setAttribute("cols", "50");
-
-        fieldset.appendChild(legend);
-        p1Tag.appendChild(albumTextLabel);
-        p1Tag.appendChild(textArea);
-
-        fieldset.appendChild(p1Tag);
-
-
-        fieldset.appendChild(submit);
-        textForm.appendChild(fieldset);
-        inputContainer.appendChild(textForm);
-
-
-        //eventlistener
-        textForm.addEventListener("submit", function(e){
-            e.preventDefault();
-
-            var formData = new FormData();
-            formData.append("albumText", textArea.value);
-
-
-
-                xmlhttp.open("post", "elementHinzufuegen.php", true);
-                xmlhttp.send(formData);
-
-                xmlhttp.onreadystatechange = function() 
-                {
-                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
-                        {
-                            $(ursprung).innerHTML = xmlhttp.responseText;
-                            inputContainer.setAttribute("class", "versteckt");
-
-                        }
-                } 
-            }, false);
-        /*
-        vorschauContainer.setAttribute("onclick", toggleSichtbarkeit(this));
-    function toggleSichtbarkeit(){
-        if(this === $(inputContainer))
+        xmlhttp.onreadystatechange = function() 
         {
-            inputContainer.setAttribute("class", "sichtbar");
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+            {
+                /* kleiner test der leider nicht klappt
+                var bild = createE("img");
+                bild.setAttribute("class", "vorschauBild");
+                bild.setAttribute("src", xmlhttp.responseText);
+                elementLeeren($(srcID));
+                
+               
+                $(srcID).appendChild(bild);
+                */
+                $(srcID).innerHTML = xmlhttp.responseText;
+                sessionStorage.setItem(srcID, xmlhttp.responseText);
+                wechselSichtbarkeit("inputContainerFoto");
+
+            }
         }
-        else
+    }, false);
+}
+//index wird benötigt function textHinzufuegen(ursprung, index)
+function textHinzufuegen(e)
+{
+    var srcID = e.target.getAttribute("id");
+  
+    
+    var inputContainerAlbumText = $("inputContainerAlbumText");
+    wechselSichtbarkeit("inputContainerAlbumText");
+    
+    var albumTextForm = $("albumTextForm");
+    var albumText = $("albumText");
+    var albumTextSubmit = $("albumTextSubmit");
+    
+    albumTextForm.addEventListener("submit", function(e){
+        e.preventDefault();
+
+        var formData = new FormData();
+        formData.append("albumText", albumText.value);
+        formData.append("albumName", sessionStorage.getItem("albumName"));
+        
+        xmlhttp.open("post", "elementHinzufuegen.php", true);
+        xmlhttp.send(formData);
+        
+        xmlhttp.onreadystatechange = function() 
         {
-            inputContainer.setAttribute("class", "versteckt");
-        }
-        }
-        */
-
-    }    
-}, false);
-
-
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+            {
+                $(srcID).innerHTML = xmlhttp.responseText;
+                wechselSichtbarkeit("inputContainerAlbumText");
+            }
+        } 
+    },false);
+}
+function speicherAlbum()
+{
+    
+    sessionStorage.removeItem("modus");
+    sessionStorage.removeItem("template");
+    sessionStorage.removeItem("anordnung");
+    sessionStorage.removeItem("albumName");
+    sessionStorage.removeItem("albumText1");
+    sessionStorage.removeItem("albumText2");
+    sessionStorage.removeItem("albumText3");
+    sessionStorage.removeItem("bild1");
+    sessionStorage.removeItem("bild2");
+    sessionStorage.removeItem("bild3");
+    sessionStorage.removeItem("bild4");
+    sessionStorage.removeItem("bild5");
+    sessionStorage.removeItem("bild6");
+    sessionStorage.removeItem("bild7");
+    sessionStorage.removeItem("bild8");
+    //spaeter sessionStorage.removeItem("seite");
+    
+    window.location ="kanal.html";
+}
 

@@ -3,14 +3,39 @@
     <head>
         <meta charset="UTF-8">
         <title>Editor| Erstelle dein eigenes Album</title>
-        <link rel="stylesheet" type="text/css" href="CSS/main.css">
         <link rel="stylesheet" type="text/css" href="CSS/buttons.css">
+        <link rel="stylesheet" type="text/css" href="CSS/editor.css">
         <script type="text/javascript" src="JS/hilfsFunktionen.js"></script>
         
     </head>
     <body>
         <div id="vorschau" >
+             <h1 id="albumNameHeader"></h1>
             <script type="text/javascript" src="JS/erzeugeEditor.js"></script>
+            <div id="inputContainerFoto" class="versteckt">
+                <form action="elementhinzufuegen.php" method="post" id="fotoForm" name="fotoForm">
+                    <fieldset>
+                        <legend>Foto hinzufuegen...</legend>
+                        <label for="fotoName" >Dein Fotoname </label>
+                        <input type="text" id="fotoName" name="fotoName" required>
+                        <label for="fotoFile">Waehle ein Foto</label>
+                        <input type="file" id="fotoFile" name="fotoFile" required>
+                        <label for="fotoText">Dein Fototext </label>
+                        <textarea rows="4" cols="50" maxlength="250" id="fotoText" name="fotoText"></textarea>
+                        <input type="submit" id="fotoSubmit" name="fotoSubmit" value="Foto hochladen">
+                    </fieldset>
+                </form>
+            </div>
+            <div id="inputContainerAlbumText" class="versteckt">
+                <form action="elementhinzufuegen.php" method="post" id="albumTextForm" name="albumTextForm">
+                    <fieldset>
+                        <legend>Text hinzufuegen...</legend>
+                        <label for="albumText">Dein Fototext </label>
+                        <textarea rows="4" cols="50" id="albumText" name="albumText"></textarea>
+                        <input type="submit" id="albumTextSubmit" name="albumTextSubmit" value="Text abschicken">
+                    </fieldset>
+                </form>
+            </div>
         </div>
         <div id="sideBar">
             <h1>Album-Editor</h1>
@@ -20,8 +45,7 @@
             <br>
             <br>
             <a class="button hinzufuegen">weitere Seite</a>
-            <a class="button bestaetigen" href="kanal.html">Album erstellen</a>
-            
+            <a class="button bestaetigen"  onclick="speicherAlbum()" >Album erstellen</a>
         </div>
     </body>
 </html>

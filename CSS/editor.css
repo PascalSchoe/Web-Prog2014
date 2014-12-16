@@ -1,0 +1,56 @@
+#vorschau
+{
+    width: 79%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+#template1
+{
+    background-image: url(../res/img/backgrounds/holzTextur_2.jpg);
+    background-repeat: no-repeat;
+    font-family: 'Audiowide', cursive;
+    width: 100vw;
+    color: #ddd;
+    height: 100vh;
+    overflow: scroll;
+
+}
+#template2
+{
+    background-image: url(../res/img/backgrounds/castle_1.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    font-family: 'Playball', cursive;
+    font-weight: bold;
+    font-size: 1vw;
+    height: 100vh;
+    overflow: scroll;
+
+}
+#template3
+{
+    background-image: url(../res/img/backgrounds/helloKitty_1.jpg);
+    background-size: 100%;
+    font-family: 'Indie Flower', cursive;
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow: scroll;
+
+}
+#inputContainerAlbumText
+{
+    float: left;
+}
+#sideBar
+{
+    width: 19vw;
+    height: 400px;
+    float: left;
+    text-align: justify;
+    padding: 0.5%;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #ddd;
+    
+}
