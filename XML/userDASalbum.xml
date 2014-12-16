@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<album name="DASalbum" benutzer="user" anordnung="anordnung1" template="template1">
+  <foto name="FotoOne" index="0">
+    <fotoText>FotoText zu fotoOne</fotoText>
+  </foto>
+  <foto name="FotoTwo" index="1">
+    <fotoText>FotoText zu fotoTwo</fotoText>
+  </foto>
+  <foto name="FotoThree" index="2">
+    <fotoText>FotoText zu fotoThree</fotoText>
+  </foto>
+  <div class="clearFix"> </div>
+  <foto name="FotoFour" index="3">
+    <fotoText>FotoText zu fotoFour</fotoText>
+  </foto>
+  <albumText index="0">Hier ist mein erster Text</albumText>
+  <foto name="FotoFive" index="4">
+    <fotoText>FotoText zu fotoFive</fotoText>
+  </foto>
+  <albumText index="1">Hier ist mein zweiter Text</albumText>
+  <foto name="FotoSix" index="5">
+    <fotoText>FotoText zu fotoSix</fotoText>
+  </foto>
+  <albumText index="2">Hier ist mein dritter Text</albumText>
+</album>

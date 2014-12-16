@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<album name="albumOne" benutzer="user" anordnung="anordnung1" template="template1">
+  <albumText index="0">test</albumText>
+  <albumText index="1">test jojo</albumText>
+  <albumText index="2">null</albumText>
+  <foto name="pictureOne" index="0">
+    <fotoText>text zU Picture One</fotoText>
+  </foto>
+  <foto name="neu" index="1">
+    <fotoText>jdnfkjsdfnkjsdfjkds</fotoText>
+  </foto>
+  <foto name="" index="2">
+    <fotoText></fotoText>
+  </foto>
+  <foto name="" index="3">
+    <fotoText></fotoText>
+  </foto>
+  <foto name="" index="4">
+    <fotoText></fotoText>
+  </foto>
+  <foto name="" index="5">
+    <fotoText></fotoText>
+  </foto>
+</album>

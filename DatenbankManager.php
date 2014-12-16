@@ -45,6 +45,21 @@ class DatenbankManager {
                     array("new" => true)
                );
    }
+   function aenderAlbumText($benutzerName, $albumName, $index, $albumText)
+   {
+       $album = DatenbankManager::$alben->findOne(array("benutzerName" => $benutzerName, "albumName" => $albumName));
+       
+       $albumTexte = $album["albumTexte"];
+       
+       $albumTexte[$index-1] = $albumText;
+       
+       $albumNeu = DatenbankManager::$alben->findAndModify(
+                    array("benutzerName" => $benutzerName, "albumName" => $albumName),
+                    array('$set' => array("albumTexte" => $albumTexte)),
+                    array(),
+                    array("new" => true)
+               );
+   }
    function fotoHochladen($fotoName, $benutzerName, $albumName, $fotoText){
        
       // $fotos = $this->gibAlleXVon("alben", "albumName", $albumName, "fotos");
@@ -78,11 +93,46 @@ class DatenbankManager {
        
        return "erfolgreich";
    }
+   function aenderFoto($benutzerName, $albumName, $fotoName, $fotoText, $index)
+   {
+       $album = DatenbankManager::$alben->findOne(array("benutzerName" => $benutzerName, "albumName" => $albumName));
+       
+       $fotos = $album["fotos"];
+       
+       $altesFoto = $fotos[$index ];
+       
+       $fotos[$index] = $fotoName;
+       
+       $albumNeu = DatenbankManager::$alben->findAndModify(
+                    array("benutzerName" => $benutzerName, "albumName" => $albumName),
+                    array('$set' => array("fotos" => $fotos)),
+                    array(),
+                    array("new" => true)
+               );
+       // Auch aus gridFs ?
+       DatenbankManager::$fotos->remove(array("fotoName" => $altesFoto,"benutzerName" => $benutzerName, "albumName" => $albumName), array("justOne" => true));
+       DatenbankManager::$fotos->insert(array("fotoName" => $fotoName,"benutzerName" =>$benutzerName,"albumName" => $albumName, "fotoText" => $fotoText));
+       $id = DatenbankManager::$gridFS->storeUpload("file", array("fotoName" => $fotoName));
+
+   }
    
    function getImage($daten)
    {
         $file = DatenbankManager::$gridFS->findOne(array('filename' => $daten));
         echo $file->getBytes();
+   }
+   
+   function gibFotoName($benutzerName,$albumName,$index)
+   {
+       $albumEintrag = DatenbankManager::$alben->findOne(array("benutzerName" => $benutzerName, "albumName" => $albumName));
+       $fotoName = $albumEintrag["fotos"][$index];      
+       return $fotoName;
+   }
+   function gibFotoText($benutzerName, $albumName, $fotoName)
+   {
+       $fotoEintrag = DatenbankManager::$fotos->findOne(array("benutzerName" =>$benutzerName, "albumName" => $albumName, "fotoName" => $fotoName));
+   
+        return $fotoEintrag["fotoText"];
    }
    
    function testeVerfuegbarkeitBenutzername($name)
@@ -161,6 +211,12 @@ class DatenbankManager {
                     array("new" => true)
                );
        DatenbankManager::$alben->insert(array("albumName" => $albumName, "benutzerName" => $benutzerName, "template" => $template, "anordnung" => $anordnung, "albumTexte" => array(), "fotos" => array(),"freigabe" => "freigegeben"));
+       /*Test
+         if($anordnung === "anordnung1")
+       {
+           DatenbankManager::$alben->insert(array("albumName" => $albumName, "benutzerName" => $benutzerName, "template" => $template, "anordnung" => $anordnung, "albumTexte" => [" "," ", " "], "fotos" => [" ", " "," "," "," "," "],"freigabe" => "freigegeben"));
+       }
+        * */
        
        return "erfolgreich";
    }

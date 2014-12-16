@@ -97,7 +97,7 @@ body
 {
     width: 25%;
     float:left;
-    overflow: srcoll;
+    overflow: scroll;
 }
 #navBar ul
 {
@@ -201,6 +201,10 @@ li
 #suchEingabeForm input
 {
     width: 85%
+}
+::-webkit-scrollbar
+{
+    display: none;
 }
 
 

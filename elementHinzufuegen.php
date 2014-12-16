@@ -5,12 +5,16 @@
     
         $db = new DatenbankManager();
     
-        if(isset($_POST["albumText"]))
+        if(isset($_POST["albumText"])&& (!isset($_POST["indexAlbumText"])))
         { 
            $db->speicherAlbumText($_SESSION["benutzerName"], $_POST["albumName"], $_POST["albumText"]);
            echo $_POST["albumText"];
         }
-      
+        if(isset($_POST["indexAlbumText"]))
+        {
+            $db->aenderAlbumText($_SESSION["benutzerName"], $_POST["albumName"], $_POST["indexAlbumText"], testeEingabe($_POST["albumText"]));
+             echo $_POST["albumText"];
+        }
         
         if(isset($_POST["albumName"]) && (!isset($_POST["albumText"]) && (!isset($_FILES["file"]))))
         {
@@ -19,7 +23,7 @@
             echo $status;
         }
         
-        if(isset($_FILES["file"]))
+        if(isset($_FILES["file"])&& (!isset($_POST["indexFoto"])))
         {
             //eingabe testen
           $status = $db->fotoHochladen($_FILES["file"]["name"], $_SESSION["benutzerName"], $_POST["albumName"],$_POST["fotoText"]);
@@ -34,6 +38,10 @@
           {
               echo 'Bitte waehle einen anderen Fotonamen';
           }
+        }
+        if(isset($_POST["indexFoto"]))
+        {
+            $db->aenderFoto($_SESSION["benutzerName"], $_POST["albumName"], $_FILES["file"]["name"], testeEingabe($_POST["fotoText"]), $_POST["indexFoto"]);
         }
         
         if(isset($_GET["editieren"]))

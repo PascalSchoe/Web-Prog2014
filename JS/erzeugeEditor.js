@@ -347,9 +347,20 @@ function initialisiereEditor()
 
 function bildHinzufuegen(e)
 {
-    var srcID = e.target.getAttribute("id");
+    var srcID;
     
+    if(e.target.getAttribute("id")!== null)
+    {
+        srcID = e.target.getAttribute("id");
+    }
+    else
+    {
+        srcID = e.target.parentNode.getAttribute("id");
+    }
     
+    console.log(srcID);
+    var index = srcID.substr(4,1);
+    console.log(index);
     var inputContainerFoto = $("inputContainerFoto");
     wechselSichtbarkeit("inputContainerFoto");
     
@@ -367,6 +378,10 @@ function bildHinzufuegen(e)
         formData.append("file", fotoFile.files[0], fotoName.value);
         formData.append("fotoText", fotoText.value);
         formData.append("albumName", sessionStorage.getItem("albumName"));
+        if(sessionStorage.getItem("modus") === "editieren")
+        {
+            formData.append("indexFoto", index);
+        }
         xmlhttp.open("post", "elementHinzufuegen.php",true);
         xmlhttp.send(formData);
 
@@ -396,7 +411,9 @@ function bildHinzufuegen(e)
 function textHinzufuegen(e)
 {
     var srcID = e.target.getAttribute("id");
-  
+    var index = srcID.substr(9,1);
+    
+    
     
     var inputContainerAlbumText = $("inputContainerAlbumText");
     wechselSichtbarkeit("inputContainerAlbumText");
@@ -412,6 +429,10 @@ function textHinzufuegen(e)
         formData.append("albumText", albumText.value);
         formData.append("albumName", sessionStorage.getItem("albumName"));
         
+        if(sessionStorage.getItem("modus") === "editieren")
+        {
+            formData.append("indexAlbumText", index);
+        }
         xmlhttp.open("post", "elementHinzufuegen.php", true);
         xmlhttp.send(formData);
         
@@ -419,6 +440,7 @@ function textHinzufuegen(e)
         {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
             {
+                sessionStorage.setItem("albumText"+index ,xmlhttp.responseText);
                 $(srcID).innerHTML = xmlhttp.responseText;
                 wechselSichtbarkeit("inputContainerAlbumText");
             }
@@ -427,24 +449,53 @@ function textHinzufuegen(e)
 }
 function speicherAlbum()
 {
+    var formData = new FormData();
+    formData.append("albumName", sessionStorage.getItem("albumName"));
+    formData.append("benutzerName", sessionStorage.getItem("benutzerName"));
+    formData.append("template", sessionStorage.getItem("template"));
+    formData.append("anordnung", sessionStorage.getItem("anordnung"));
+    formData.append("albumText1", sessionStorage.getItem("albumText1"));
+    formData.append("albumText2", sessionStorage.getItem("albumText2"));
+    formData.append("albumText3", sessionStorage.getItem("albumText3"));
+    formData.append("bild1", sessionStorage.getItem("bild1"));
+    formData.append("bild2", sessionStorage.getItem("bild2"));
+    formData.append("bild3", sessionStorage.getItem("bild3"));
+    formData.append("bild4", sessionStorage.getItem("bild4"));
+    formData.append("bild5", sessionStorage.getItem("bild5"));
+    formData.append("bild6", sessionStorage.getItem("bild6"));
+    formData.append("bild7", sessionStorage.getItem("bild7"));
+    formData.append("bild8", sessionStorage.getItem("bild8"));
+    xmlhttp.open("post", "starteXMLGenerator.php", true);
+    xmlhttp.send(formData);
+        
+    xmlhttp.onreadystatechange = function() 
+    {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+        {
+            alert(xmlhttp.responseText);
+            
+            sessionStorage.removeItem("modus");
+            sessionStorage.removeItem("template");
+            sessionStorage.removeItem("anordnung");
+            sessionStorage.removeItem("albumName");
+            sessionStorage.removeItem("albumText1");
+            sessionStorage.removeItem("albumText2");
+            sessionStorage.removeItem("albumText3");
+            sessionStorage.removeItem("bild1");
+            sessionStorage.removeItem("bild2");
+            sessionStorage.removeItem("bild3");
+            sessionStorage.removeItem("bild4");
+            sessionStorage.removeItem("bild5");
+            sessionStorage.removeItem("bild6");
+            sessionStorage.removeItem("bild7");
+            sessionStorage.removeItem("bild8");
+            //spaeter sessionStorage.removeItem("seite");
+
+            window.location ="kanal.html";
+        }
+    }
     
-    sessionStorage.removeItem("modus");
-    sessionStorage.removeItem("template");
-    sessionStorage.removeItem("anordnung");
-    sessionStorage.removeItem("albumName");
-    sessionStorage.removeItem("albumText1");
-    sessionStorage.removeItem("albumText2");
-    sessionStorage.removeItem("albumText3");
-    sessionStorage.removeItem("bild1");
-    sessionStorage.removeItem("bild2");
-    sessionStorage.removeItem("bild3");
-    sessionStorage.removeItem("bild4");
-    sessionStorage.removeItem("bild5");
-    sessionStorage.removeItem("bild6");
-    sessionStorage.removeItem("bild7");
-    sessionStorage.removeItem("bild8");
-    //spaeter sessionStorage.removeItem("seite");
     
-    window.location ="kanal.html";
+    
 }
 
