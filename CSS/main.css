@@ -102,7 +102,7 @@ img{
 }
 
 
-/*
+
 .anordnung1 .bild1
 {
 
@@ -152,7 +152,7 @@ img{
     margin-bottom: 5vh; 
     text-align: justify;
 }
-*/
+
 .anordnung2 .bild1
 {
 
@@ -425,32 +425,7 @@ img{
 }
 
 
-.templateEinsVorschau{
-    float: left;
-    background-image: url(../res/img/backgrounds/holzTextur_2.jpg);
-    background-repeat: no-repeat;
-    font-family: 'Audiowide', cursive;
-    color: #ddd;
-    width: 80vw;
-}
-.templateZweiVorschau{
-    float: left;
-    background-image: url(../res/img/backgrounds/castle_1.jpg);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    font-family: 'Playball', cursive;
-    font-weight: bold;
-    font-size: 1vw;
-    width: 80vw;
-}
-.templateDreiVorschau{
-    float: left;
-    background-image: url(../res/img/backgrounds/helloKitty_1.jpg);
-    background-size: 100%;
-    font-family: 'Indie Flower', cursive;
-    background-repeat: no-repeat;
-    width: 80vw;
-}
+
 .bilder
 {
     width: 17vmax;
@@ -460,102 +435,7 @@ img{
     display: inline-block;
 }
 
-.anordnung1 .bild1{
-    width: 17vmax;
-    height: 10vmax;
-    float: left;
-    background: rgba(0,0,0,0.1);
-    border: 1px solid black;
-    display: inline-block;
-    margin-right: 2vmax;
-    margin-bottom: 2vmax;
-}
-.anordnung1 .bild2{
-    width: 17vmax;
-    height: 10vmax;
-    float: left;
-    background: rgba(0,0,0,0.1);
-    border: 3px solid black;
-    display: inline-block;
-    margin-right: 2vmax;
-    margin-bottom: 2vmax;
-}
-.anordnung1 .bild3{
-    width: 17vmax;
-    height: 10vmax;
-    float: left;
-    background: rgba(0,0,0,0.1);
-    border: 1px solid black;
-    display: inline-block;
-    margin-right: 2vmax;
-    margin-bottom: 2vmax;
-}
-.anordnung1 .bild4{
-    width: 17vmax;
-    height: 10vmax;
-    float: left;
-    background: rgba(0,0,0,0.1);
-    border: 1px solid black;
-    display: inline-block;
-    margin-right: 2vmax;
-    margin-bottom: 2vmax;
-    
-}
-.anordnung1 .bild5{
-    width: 17vmax;
-    height: 10vmax;
-    float: left;
-    background: rgba(0,0,0,0.1);
-    border: 1px solid black;
-    display: inline-block;
-    margin-right: 2vmax;
-    margin-bottom: 2vmax;
-}
 
-.anordnung1 .bild6{
-    width: 17vmax;
-    height: 10vmax;
-    float: left;
-    background: rgba(0,0,0,0.1);
-    border: 1px solid black;
-    display: inline-block;
-    margin-right: 2vmax;
-    margin-bottom: 2vmax;
-}
-.anordnung1 .albumText1
-{
-    width: 50vmax;
-    height: 10vmax;
-    float: left;
-    background: rgba(0,0,0,0.1);
-    border: 1px solid black;
-    display: inline-block;
-    margin-bottom: 2vmax;
-    font-weight: bold;
-    text-align: justify;
-}
-.anordnung1 .albumText2
-{
-    width: 50vmax;
-    height: 10vmax;
-    float: left;
-    background: rgba(0,0,0,0.1);
-    border: 1px solid black;
-    margin-bottom: 2vmax;
-    font-weight: bold;
-    text-align: justify;
-}
-.anordnung1 .albumText3
-{
-    width: 50vmax;
-    height: 10vmax;
-    float: left;
-    background: rgba(0,0,0,0.1);
-    border: 1px solid black;
-    margin-bottom: 2vmax;
-    font-weight: bold;
-    text-align: justify;
-}
 
 #inputContainer
 {
@@ -596,10 +476,7 @@ img{
 {
     width: 20vmax;
 }
-#fotoTextLabel
-{
-    
-}
+
 .versteckt
 {
     visibility: hidden;
@@ -607,9 +484,4 @@ img{
 .sichtbar
 {
     visibility: visible;
-}
-.vorschauBild{
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
 }

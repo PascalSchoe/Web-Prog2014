@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Editor| Erstelle dein eigenes Album</title>
+        <link href='http://fonts.googleapis.com/css?family=Syncopate:400,700|Montez|Yesteryear|Mrs+Sheppards' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="CSS/buttons.css">
         <link rel="stylesheet" type="text/css" href="CSS/editor.css">
         <script type="text/javascript" src="JS/hilfsFunktionen.js"></script>
@@ -16,13 +17,15 @@
                 <form action="elementhinzufuegen.php" method="post" id="fotoForm" name="fotoForm">
                     <fieldset>
                         <legend>Foto hinzufuegen...</legend>
-                        <label for="fotoName" >Dein Fotoname </label>
-                        <input type="text" id="fotoName" name="fotoName" required>
-                        <label for="fotoFile">Waehle ein Foto</label>
-                        <input type="file" id="fotoFile" name="fotoFile" required>
-                        <label for="fotoText">Dein Fototext </label>
-                        <textarea rows="4" cols="50" maxlength="250" id="fotoText" name="fotoText"></textarea>
-                        <input type="submit" id="fotoSubmit" name="fotoSubmit" value="Foto hochladen">
+                        <p><label for="fotoName" >Dein Fotoname </label></p>
+                        <p><input type="text" id="fotoName" name="fotoName" required></p>
+                        <p  style="margin-top: 7%">
+                            <label for="fotoFile">Waehle ein Foto</label>
+                            <input type="file" id="fotoFile" name="fotoFile" required>
+                        </p>
+                        <p style="margin-top: 7%"><label for="fotoText">Dein Fototext </label></p>
+                        <p><textarea rows="4" cols="50" maxlength="250" id="fotoText" name="fotoText"></textarea></p>
+                        <p><input type="submit" id="fotoSubmit" name="fotoSubmit" value="Foto hochladen"></p>
                     </fieldset>
                 </form>
             </div>
@@ -30,20 +33,17 @@
                 <form action="elementhinzufuegen.php" method="post" id="albumTextForm" name="albumTextForm">
                     <fieldset>
                         <legend>Text hinzufuegen...</legend>
-                        <label for="albumText">Dein Fototext </label>
-                        <textarea rows="4" cols="50" id="albumText" name="albumText"></textarea>
-                        <input type="submit" id="albumTextSubmit" name="albumTextSubmit" value="Text abschicken">
+                        <p><label for="albumText">Dein Albumtext </label></p>
+                        <p><textarea rows="4" cols="50" id="albumText" name="albumText"></textarea></p>
+                        <p><input type="submit" id="albumTextSubmit" name="albumTextSubmit" value="Text abschicken"><p>
                     </fieldset>
                 </form>
             </div>
         </div>
         <div id="sideBar">
             <h1>Album-Editor</h1>
-            <br>
             <p>Hier kannst du dein Album erstellen, um Elemente hinzu zufügen klicke bitte auf den Platzhalter für das entsprechende Element.</p>
             <p>Im Anschluß öffnet sich ein Fenster in dem du deine Eingaben machen kannst, bestätigst du, so werden deine Daten an den Server gesandt und dir als Vorschau dargestellt.</p>
-            <br>
-            <br>
             <a class="button hinzufuegen">weitere Seite</a>
             <a class="button bestaetigen"  onclick="speicherAlbum()" >Album erstellen</a>
         </div>

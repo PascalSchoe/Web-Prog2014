@@ -85,9 +85,8 @@ body
 #trennStrich
 {
     background: rgba(150,150,0,.8);
-    //background:#f7ae2b;
     width: 100%;
-    height: 100px;
+    height: 15vh;
     border-top: 2px solid #bbb;
     box-shadow: 0 -0.25em 0.2em 0.1em #ccc;
 }
@@ -96,10 +95,13 @@ body
 */
 #navBar
 {
-    width: 20%;
-    height: 80vh;
+    width: 25%;
     float:left;
-    border-right: 1px solid #aaa;
+    overflow: srcoll;
+}
+#navBar ul
+{
+    margin-left:-10%;
 }
 #serverMeldungen
 {
@@ -109,18 +111,19 @@ body
 }
 #content
 {
-    width: 79vw;
-    height: 80vh;
+    width: 74%;
     float:left;
+    border-left: 1px solid #aaa;
 }
 
 .albumIcon
 {
-    width: 22%;
+    width: 35%;
     border: 1px solid black;
     border-radius: 5px;
     float: left;
     margin: 1%;
+    margin-right: 5%;
     text-align: center;
 }
 .freigegeben

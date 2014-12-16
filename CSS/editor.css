@@ -1,56 +1,225 @@
+body{
+    margin: 0 ;
+    padding: 0;
+    background: rgba(25,25,25,.75);
+    text-align: center;
+    
+}
 #vorschau
 {
-    width: 79%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
+    
+    
 }
-#template1
+
+.templateEinsVorschau
 {
     background-image: url(../res/img/backgrounds/holzTextur_2.jpg);
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
     font-family: 'Audiowide', cursive;
-    width: 100vw;
     color: #ddd;
-    height: 100vh;
     overflow: scroll;
-
+    margin-bottom:0;
+    padding:0;
+    float: left;
+    width: 79vw;
+    height: 100vh;
 }
-#template2
+.templateZweiVorschau
 {
     background-image: url(../res/img/backgrounds/castle_1.jpg);
-    background-size: 100%;
     background-repeat: no-repeat;
-    font-family: 'Playball', cursive;
-    font-weight: bold;
-    font-size: 1vw;
-    height: 100vh;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    font-family: 'Audiowide', cursive;
+    color: #ddd;
     overflow: scroll;
-
+    margin-bottom:0;
+    padding:0;
+    float: left;
+    width: 79vw;
+    height: 100vh;
 }
-#template3
+.templateDreiVorschau
 {
     background-image: url(../res/img/backgrounds/helloKitty_1.jpg);
-    background-size: 100%;
-    font-family: 'Indie Flower', cursive;
     background-repeat: no-repeat;
-    height: 100vh;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    font-family: 'Audiowide', cursive;
+    color: #000;
     overflow: scroll;
-
+    float: left;
+    width: 79vw;
+    height: 100vh;
 }
+
 #inputContainerAlbumText
 {
+    background: rgba(25,25,25,0.75);
+    color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 40vmax;
+    margin-left: 20vmax;
+    z-index: 24234;
     float: left;
+    text-align: center;
+    padding: 5vmax;
+    position: absolute;
+    
+}
+#inputContainerFoto
+{
+    background: rgba(25,25,25,0.75);
+    color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 40vmax;
+    margin-left: 20vmax;
+    z-index: 24234;
+    float: left;
+    text-align: center;
+    padding: 5vmax;
+    position: absolute;
 }
 #sideBar
 {
     width: 19vw;
-    height: 400px;
+    height: 100vh;
     float: left;
-    text-align: justify;
+    text-align: left;
     padding: 0.5%;
+    font-family: arial;
     font-weight: bold;
     font-size: 1.1em;
     color: #ddd;
+    overflow: scroll;
     
+}
+.anordnung1 .bild1{
+    width: 17vmax;
+    height: 10vmax;
+    float: left;
+    background: rgba(0,0,0,0.1);
+    border: 1px solid black;
+    display: inline-block;
+    margin-right: 2vmax;
+    margin-bottom: 2vmax;
+}
+.anordnung1 .bild2{
+    width: 17vmax;
+    height: 10vmax;
+    float: left;
+    background: rgba(0,0,0,0.1);
+    border: 1px solid black;
+    display: inline-block;
+    margin-right: 2vmax;
+    margin-bottom: 2vmax;
+}
+.anordnung1 .bild3{
+    width: 17vmax;
+    height: 10vmax;
+    float: left;
+    background: rgba(0,0,0,0.1);
+    border: 1px solid black;
+    display: inline-block;
+    margin-right: 2vmax;
+    margin-bottom: 2vmax;
+}
+.anordnung1 .bild4{
+    width: 17vmax;
+    height: 10vmax;
+    float: left;
+    background: rgba(0,0,0,0.1);
+    border: 1px solid black;
+    display: inline-block;
+    margin-right: 2vmax;
+    margin-bottom: 2vmax;
+    
+}
+.anordnung1 .bild5{
+    width: 17vmax;
+    height: 10vmax;
+    float: left;
+    background: rgba(0,0,0,0.1);
+    border: 1px solid black;
+    display: inline-block;
+    margin-right: 2vmax;
+    margin-bottom: 2vmax;
+}
+
+.anordnung1 .bild6{
+    width: 17vmax;
+    height: 10vmax;
+    float: left;
+    background: rgba(0,0,0,0.1);
+    border: 1px solid black;
+    display: inline-block;
+    margin-right: 2vmax;
+    margin-bottom: 2vmax;
+}
+.anordnung1 .albumText1
+{
+    width: 50vmax;
+    height: 10vmax;
+    float: left;
+    background: rgba(0,0,0,0.1);
+    border: 1px solid black;
+    display: inline-block;
+    margin-bottom: 2vmax;
+    font-weight: bold;
+    text-align: justify;
+}
+.anordnung1 .albumText2
+{
+    width: 50vmax;
+    height: 10vmax;
+    float: left;
+    background: rgba(0,0,0,0.1);
+    border: 1px solid black;
+    margin-bottom: 2vmax;
+    font-weight: bold;
+    text-align: justify;
+}
+.anordnung1 .albumText3
+{
+    width: 50vmax;
+    height: 10vmax;
+    float: left;
+    background: rgba(0,0,0,0.1);
+    border: 1px solid black;
+    margin-bottom: 2vmax;
+    font-weight: bold;
+    text-align: justify;
+}
+.versteckt
+{
+    visibility: hidden;
+}
+.sichtbar
+{
+    visibility: visible;
+}
+.vorschauBild{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+.clearFix
+{
+    clear: both;
+}
+#albumTextSubmit
+{
+    width: 50%;
+}
+#fotoSubmit
+{
+    width: 50%;
+}
+::-webkit-scrollbar
+{
+    display: none;
 }
